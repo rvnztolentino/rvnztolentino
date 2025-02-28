@@ -42,7 +42,7 @@ const ProjectCard = ({
               <Badge 
                 key={index} 
                 variant="secondary" 
-                className="bg-light-gray-3 hover:bg-light-gray-2"
+                className="bg-light-gray-3 hover:bg-light-gray-2 rounded-full"
               >
                 {badge}
               </Badge>
@@ -50,7 +50,7 @@ const ProjectCard = ({
             {isGithub && (
                 <Badge
                     variant="secondary"
-                    className="bg-black hover:bg-light-gray-3 text-white hover:text-black"
+                    className="bg-black hover:bg-light-gray-3 text-white hover:text-black rounded-full"
                 >
                     GITHUB
                 </Badge>
@@ -73,12 +73,12 @@ export default function ProjectGrid() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto">
       <ProjectCard
-        name="Kaku Task & Notes"
+        name="Kaku"
         description="Task management and note-taking PWA."
         badges={["NEXT.JS"]}
         isGithub={true}
         imageContent={"/thumbnail/kakupreview.jpg"}
-        href="#"
+        href="/projects/kaku"
       />
       <ProjectCard
         name="NitroClicker"
@@ -86,7 +86,7 @@ export default function ProjectGrid() {
         badges={["C++"]}
         isGithub={true}
         imageContent={"/thumbnail/nitropreview.jpg"}
-        href="#"
+        href="/projects/nitroclicker"
       />
       <ProjectCard
         name="Goodwill Hotel"
@@ -94,7 +94,7 @@ export default function ProjectGrid() {
         badges={["PHP", "CSS"]}
         isGithub={true}
         imageContent={"/thumbnail/goodwillpreview.jpg"}
-        href="#"
+        href="/projects/goodwill-hotel"
       />
       <ProjectCard
         name="Camlin Arts & Crafts (Vanilla)"
@@ -102,7 +102,7 @@ export default function ProjectGrid() {
         badges={["CSS", "HTML"]}
         isGithub={true}
         imageContent={"/thumbnail/camlinpreview.jpg"}
-        href="#"
+        href="/projects/camlin-arts-crafts-vanilla"
       />
     </div>
   );

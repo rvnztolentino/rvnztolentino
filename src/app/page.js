@@ -2,9 +2,6 @@
 
 import { useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { FileText } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProductGrid from "./components/ProductCard"
 import BlogGrid from "./components/BlogCard"
@@ -24,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen flex justify-center pb-16"> {/* DEFAULT SETTING */}
       <div className="w-full px-4 md:px-16"> {/* DEFAULT SETTING */}
         <main className="flex flex-col space-y-5 py-8 font-noto-sans"> {/* DEFAULT SETTING */}
-          <Image src="/cube.svg" width={70} height={70} alt="svg" /> {/* DEFAULT SETTING */}
+          <Image src="/icons/cube.svg" width={70} height={70} alt="svg" /> {/* DEFAULT SETTING */}
           <h1 className="text-4xl text-dark-gray">Renz Tolentino</h1> {/* DEFAULT SETTING */}
           <p className="border-b border-light-gray-2"></p> {/* DEFAULT SETTING */}
 
@@ -33,7 +30,7 @@ export default function Home() {
             i&apos;m currently in the process of building and refining this space, deciding on the best content to
             showcase. updates are on the way, stay tuned! 👋
           </p>
-          <Image src="/thumbnail/jdm.jpg" width={750} height={250} alt="img" className="rounded-xl" />
+          <Image src="/thumbnail/jdm.jpg" width={750} height={250} alt="img" className="rounded-lg shadow-md" />
 
           <p className="border-b border-light-gray-2 pt-4"></p>
           

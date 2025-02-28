@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { ExternalLink } from "@/components/external-link";
 import Selection from "./Selection";
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react";
@@ -55,13 +56,13 @@ const Navbar = () => {
             <Link href="/contact">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
             </Link>
-            <Link href="https://linktr.ee/rvnztolentino">
+            <ExternalLink href="https://linktr.ee/rvnztolentino">
               <Button 
                 variant="outline" 
-                className="text-left mr-[-25px] mt-2 rounded-md bg-black hover:bg-white text-white hover:text-black transition-all duration-300 ease-in-out">
+                className="text-left mr-[-25px] mt-2 rounded-full bg-black hover:bg-white text-white hover:text-black transition-all duration-300 ease-in-out">
                 linktree
               </Button>
-            </Link>
+            </ExternalLink>
           </ul>
         </nav>
       </div>

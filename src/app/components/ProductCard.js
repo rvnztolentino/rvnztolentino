@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
 
 const ProductCard = ({ 
   name, 
@@ -17,18 +16,12 @@ const ProductCard = ({
   return (
     <Link 
       href={isAvailable ? href : "#"}
-      onClick={
-        !isAvailable
-          ? () =>
-              toast("Product is currently unavailable :(", {
-                description: "Please check back soon.",
-                action: {
-                  label: "Close",
-                  onClick: () => console.log("Close"),
-                },
-              })
-          : undefined
-      }
+      onClick={(e) => {
+        if (!isAvailable) {
+          e.preventDefault()
+          alert("This product is currently not available.")
+        }
+      }}
       className="block transition-transform lg:hover:-translate-y-1"
     >
       <Card className="w-full max-h-[450px] bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
@@ -61,7 +54,7 @@ const ProductCard = ({
               <Badge 
                 key={index} 
                 variant="secondary" 
-                className="bg-light-gray-3 hover:bg-light-gray-2 text-gray-600"
+                className="bg-light-gray-3 hover:bg-light-gray-2 text-gray-600 rounded-full"
               >
                 {badge}
               </Badge>

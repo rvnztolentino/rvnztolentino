@@ -28,12 +28,12 @@ const Blog = () => {
                 <div className="text-md text-dark-gray space-y-2">
                     <p className="text-xl">Blog posts</p>
                     <p>Documenting my guides, tutorials, personal experiences, and reflections.</p>
-                    <p 
+                    {/* <p 
                         className="font-courier-prime text-sm text-red text-opacity-80 bg-light-gray-3 px-2" 
                         style={{ display: 'inline-block', padding: '2px 5px 0px 5px' }}
                     >
                         last update: feb. 16, 2025
-                    </p>
+                    </p> */}
                 </div>
                 <BlogGrid />
             </main>

@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from './components/Navbar';
 import Chat from './components/Chat';
 import Credit from './components/Credit';
-import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,7 +39,6 @@ export default function RootLayout({ children }) {
           <div className="hidden lg:block w-80 flex-shrink-0" />
           {/* Chat Component */}
           <Chat />
-          <Toaster />
         </div>
       </body>
     </html>
