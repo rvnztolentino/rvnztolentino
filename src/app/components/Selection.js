@@ -32,7 +32,7 @@ const Selection = ({ handleClose }) => {
             <Link href="https://linktr.ee/rvnztolentino" onClick={handleClose}>
                 <Button 
                 variant="outline" 
-                className="mr-[-5px] mt-2 rounded-md bg-black hover:bg-white text-white hover:text-black transition-all duration-300 ease-in-out">
+                className="mr-[-5px] mt-2 rounded-full bg-black hover:bg-white text-white hover:text-black transition-all duration-300 ease-in-out">
                 linktree
                 </Button>
             </Link>
