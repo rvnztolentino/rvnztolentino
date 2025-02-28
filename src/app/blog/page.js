@@ -32,7 +32,7 @@ const Blog = () => {
                         className="font-courier-prime text-sm text-red text-opacity-80 bg-light-gray-3 px-2" 
                         style={{ display: 'inline-block', padding: '2px 5px 0px 5px' }}
                     >
-                        last update: feb. 16, 2025
+                        last update: feb. 16, 2025 test test
                     </p> */}
                 </div>
                 <BlogGrid />
