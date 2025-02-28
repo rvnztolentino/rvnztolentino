@@ -24,7 +24,7 @@ const Store = () => {
                     <p className="border-b border-light-gray-2"></p>
 
                     <div className="text-md text-dark-gray space-y-2">
-                        <p className="text-xl">Digital products</p>
+                        <p className="font-bold">Digital products</p>
                         <p>Showcasing my products, offerings, and digital creations.</p>
                     </div>
                     <ProductGrid />

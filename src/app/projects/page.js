@@ -24,7 +24,7 @@ const Projects = () => {
                     <p className="border-b border-light-gray-2"></p>
 
                     <div className="text-md text-dark-gray space-y-2">
-                        <p className="text-xl">Completed tasks</p>
+                        <p className="font-bold">Completed tasks</p>
                         <p>Highlighting my personal and collaborative projects, and experiments.</p>
                     </div>
                     <ProjectGrid />

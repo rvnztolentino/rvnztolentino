@@ -67,7 +67,7 @@ const ProjectPage = ({
                     <div className="text-md text-dark-gray space-y-2">
                         <div className="flex flex-wrap gap-2">
                             <ExternalLink href={githubRef}>
-                                <Button variant="outline" className="bg-black text-white hover:bg-white hover:text-black rounded-full mb-2">
+                                <Button variant="outline" className="bg-black rounded-full mb-2 text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -87,21 +87,21 @@ const ProjectPage = ({
                                 </Button>
                             </ExternalLink>
                             <ExternalLink href={href}>
-                                <Button variant="outline" className="bg-light-gray-3 text-black hover:bg-white hover:text-black rounded-full mb-2">Download</Button>
+                                <Button variant="outline" className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out">Preview</Button>
                             </ExternalLink>
                         </div>
                         
                         <p>NitroClicker is an open-source console-based autoclicker built in C++ with customizable clicks per second (CPS). Ideal for tasks that require rapid and continuous clicking, it activates when you hold a key.</p>
                         
-                        <p className="text-xl pt-4">CPS Counter Display</p>
+                        <p className="pt-6 font-bold">CPS Counter Display</p>
                         <Image src="/projects/nitro001.png" height={720} width={720} alt="CPS Counter Display" className="w-full h-full rounded-lg shadow-md" />
                         <p className="pt-2">You can set your desired Clicks Per Second (CPS) value. Take note that the actual clicking speed may not always match your input. To ensure you get a closer clicking speed to your desired CPS, consider setting your desired CPS value slightly higher than your intended rate. For example, if you want 20 CPS but experience lower CPS, you might try setting it to 24 or 28 CPS.</p>
                     
-                        <p className="text-xl pt-4">Mouse Button Selection</p>
+                        <p className="pt-6 font-bold">Mouse Button Selection</p>
                         <Image src="/projects/nitro002.png" height={720} width={720} alt="Mouse Button Selection" className="w-full h-full rounded-lg shadow-md" />
                         <p>You can choose between the left, right, or middle mouse button for autoclicking. Simply click the button you want to use and it will be set as your selection for the autoclick function.</p>
 
-                        <p className="text-xl pt-4">Key Selection & Activation</p>
+                        <p className="pt-6 font-bold">Key Selection & Activation</p>
                         <Image src="/projects/nitro003.png" height={720} width={720} alt="Mouse Button Selection" className="w-full h-full rounded-lg shadow-md" />
                         <p>This section of the autoclicker allows you to select their desired activation key. After pressing a key, the program confirms the selection and instructs you to hold down the chosen key to start the autoclicker. The autoclicker will remain active as long as the key is held, automatically clicking at the configured clicks per second (CPS) rate.</p>
 

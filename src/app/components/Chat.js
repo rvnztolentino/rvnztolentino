@@ -3,11 +3,12 @@
 import { useState, useRef, useEffect } from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
-import { Send, MessageSquare, X } from "lucide-react" // Added X icon
+import { Send, MessageSquare, X } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { GoogleGenerativeAI } from "@google/generative-ai";
+require('dotenv').config();
 
-const genAI = new GoogleGenerativeAI("AIzaSyCKGPuLJGfrMDXdmNjWLYR6eRzfX6Ah4zU")
+const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction: `Instruction:

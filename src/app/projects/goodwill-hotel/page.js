@@ -68,7 +68,7 @@ const ProjectPage = ({
                     <div className="text-md text-dark-gray space-y-2">
                         <div className="flex flex-wrap gap-2">
                             <ExternalLink href={githubRef}>
-                                <Button variant="outline" className="bg-black text-white hover:bg-white hover:text-black rounded-full mb-2">
+                                <Button variant="outline" className="bg-black rounded-full mb-2 text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -88,7 +88,7 @@ const ProjectPage = ({
                                 </Button>
                             </ExternalLink>
                             <ExternalLink href={href}>
-                                <Button variant="outline" className="bg-light-gray-3 text-black hover:bg-white hover:text-black rounded-full mb-2">Preview</Button>
+                                <Button variant="outline" className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out">Preview</Button>
                             </ExternalLink>
                         </div>
                     </div>

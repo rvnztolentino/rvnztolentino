@@ -37,21 +37,21 @@ export default function Home() {
           <Tabs defaultValue="store" className="w-full">
             <TabsContent value="store">
               <div className="text-md text-dark-gray space-y-2 mb-4">
-                  <p className="text-xl">Digital products</p>
+                  <p className="font-bold">Digital products</p>
                   <p>Showcasing my products, offerings, and digital creations.<br></br></p>
               </div>
             </TabsContent>
 
             <TabsContent value="projects">
               <div className="text-md text-dark-gray space-y-2 mb-4">
-                  <p className="text-xl">Completed tasks</p>
+                  <p className="font-bold">Completed tasks</p>
                   <p>Highlighting my personal and collaborative projects, and experiments.</p>
               </div>
             </TabsContent>
 
             <TabsContent value="blog">
-              <div className="text-md text-dark-gray space-y-2 mb-4">
-                  <p className="text-xl">Blog posts</p>
+              <div className="text- text-dark-gray space-y-2 mb-4">
+                  <p className="font-bold">Blog posts</p>
                   <p>Documenting my guides, tutorials, personal experiences, and reflections.</p>
               </div>
             </TabsContent>
