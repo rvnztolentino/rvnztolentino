@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const ProjectPage = ({
-    title = "camlin arts & crafts (vanilla)",
+    title = "Camlin Arts & Crafts (Vanilla)",
     date = "October 14, 2024",
     badges = ["CSS", "HTML"],
     isGithub = true,

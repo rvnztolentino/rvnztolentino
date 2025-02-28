@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const ProjectPage = ({
-    title = "goodwill hotel",
+    title = "Goodwill Hotel",
     date = "July 10, 2024",
     badges = ["PHP", "CSS", "MYSQL"],
     isGithub = true,

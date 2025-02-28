@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 const ProjectPage = ({
-    title = "kaku",
+    title = "Kaku",
     date = "December 24, 2024",
     badges = ["NEXT.JS", "TAILWIND CSS"],
     isGithub = true,

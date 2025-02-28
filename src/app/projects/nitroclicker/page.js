@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
   
 const ProjectPage = ({
-    title = "nitroclicker",
+    title = "NitroClicker",
     date = "October 13, 2024",
     badges = ["C++"],
     isGithub = true,
