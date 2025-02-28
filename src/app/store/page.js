@@ -25,7 +25,7 @@ const Store = () => {
 
                     <div className="text-md text-dark-gray space-y-2">
                         <p className="text-xl">Digital products</p>
-                        <p>A place to showcase my products, offerings, and digital creations<br></br></p>
+                        <p>Showcasing my products, offerings, and digital creations.</p>
                     </div>
                     <ProductGrid />
                 </main>

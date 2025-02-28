@@ -160,7 +160,7 @@ const Chat = () => {
     <div className="fixed bottom-4 right-4 font-noto-sans">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger>
-          <div className="flex justify-center items-center rounded-full bg-black text-white hover:bg-white hover:text-black shadow-lg hover:border transition-all duration-300 ease-in-out text-sm w-14 h-14">
+          <div className="flex justify-center items-center rounded-full bg-black text-white hover:bg-white hover:text-black hover:border shadow-lg transition-all duration-300 ease-in-out text-sm w-14 h-14">
             <MessageSquare />
           </div>
         </PopoverTrigger>

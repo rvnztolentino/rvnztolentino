@@ -29,9 +29,9 @@ const ProductCard = ({
               })
           : undefined
       }
-      className="block transition-transform hover:-translate-y-1"
+      className="block transition-transform lg:hover:-translate-y-1"
     >
-      <Card className="w-full bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+      <Card className="w-full max-h-[450px] bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
         <CardContent className="p-4">
 
           {/* Image */}
@@ -41,7 +41,7 @@ const ProductCard = ({
                 width={256}
                 height={256}
                 alt={name}
-                className="object-contain h-256 w-256 rounded-lg"
+                className="object-contain h-256 w-256 rounded-lg shadow-md"
               />
           </div>
 
@@ -89,7 +89,7 @@ export default function ProductGrid() {
         price="150"
         badges={["NOTION TEMPLATE", "NEW"]}
         isAvailable={false}
-        imageContent={"/thumbnail/sample.jpg"}
+        imageContent={"/thumbnail/mangalibrary.jpg"}
         href="#"
       />
       <ProductCard
@@ -98,7 +98,7 @@ export default function ProductGrid() {
         price="0"
         badges={["NOTION TEMPLATE", "FREE"]}
         isAvailable={false}
-        imageContent={"/thumbnail/sample-2.jpg"}
+        imageContent={"/thumbnail/studentdashboard.jpg"}
         href="#"
       />
     </div>

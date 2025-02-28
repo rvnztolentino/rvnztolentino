@@ -26,7 +26,8 @@ const Blog = () => {
                 <p className="border-b border-light-gray-2"></p>
 
                 <div className="text-md text-dark-gray space-y-2">
-                    <p>A place where I document my guides, tutorials, personal experiences, and reflections.<br></br></p>
+                    <p className="text-xl">Blog posts</p>
+                    <p>Documenting my guides, tutorials, personal experiences, and reflections.</p>
                     <p 
                         className="font-courier-prime text-sm text-red text-opacity-80 bg-light-gray-3 px-2" 
                         style={{ display: 'inline-block', padding: '2px 5px 0px 5px' }}

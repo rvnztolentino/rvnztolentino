@@ -5,8 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FileText } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProductGrid from "./components/ProductCard"
 import BlogGrid from "./components/BlogCard"
+import ProjectGrid from "./components/ProjectCard"
 
 export default function Home() {
   // Auto-scroll to top once page is opened
@@ -35,22 +37,46 @@ export default function Home() {
 
           <p className="border-b border-light-gray-2 pt-4"></p>
           
-          {/* Products */}
-          <div className="text-md text-dark-gray space-y-2">
-              <p className="text-xl">Digital products</p>
-              <p>Showcasing my products, offerings, and digital creations.<br></br></p>
-          </div>
-          <ProductGrid />
+          <Tabs defaultValue="store" className="w-full">
+            <TabsContent value="store">
+              <div className="text-md text-dark-gray space-y-2 mb-4">
+                  <p className="text-xl">Digital products</p>
+                  <p>Showcasing my products, offerings, and digital creations.<br></br></p>
+              </div>
+            </TabsContent>
 
-          <p className="border-b border-light-gray-2 pt-4"></p>
+            <TabsContent value="projects">
+              <div className="text-md text-dark-gray space-y-2 mb-4">
+                  <p className="text-xl">Completed tasks</p>
+                  <p>Highlighting my personal and collaborative projects, and experiments.</p>
+              </div>
+            </TabsContent>
 
-          {/* Blogs */}
-          <div className="text-md text-dark-gray space-y-2">
-              <p className="text-xl">Blog posts</p>
-              <p>Documenting my guides, tutorials, personal experiences, and reflections.<br></br></p>
-          </div>
-          <BlogGrid />
-          
+            <TabsContent value="blog">
+              <div className="text-md text-dark-gray space-y-2 mb-4">
+                  <p className="text-xl">Blog posts</p>
+                  <p>Documenting my guides, tutorials, personal experiences, and reflections.</p>
+              </div>
+            </TabsContent>
+
+            <TabsList className="mb-2">
+              <TabsTrigger value="store">Store</TabsTrigger>
+              <TabsTrigger value="projects">Projects</TabsTrigger>
+              <TabsTrigger value="blog">Blog</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="store">
+              <ProductGrid />
+            </TabsContent>
+
+            <TabsContent value="projects">
+              <ProjectGrid />
+            </TabsContent>
+
+            <TabsContent value="blog">
+              <BlogGrid />
+            </TabsContent>
+          </Tabs>
         </main>
       </div>
     </div>
