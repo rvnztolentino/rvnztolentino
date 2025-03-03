@@ -32,7 +32,7 @@ const Navbar = () => {
       {showMenu ? <Selection handleClose={refreshMenu} /> : null}
 
       {/* Desktop View */}
-      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-150px] 2xl:mx-[-245px] 3xl:w-[180px] 4xl:mx-[600px] xs:mt-4 lg:mt-[-50px] lg:block">
+      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-180px] 2lg:mx-[-150px] 2xl:mx-[-245px] 3xl:w-[180px] 4xl:mx-[600px] xs:mt-4 lg:mt-[-50px] lg:block">
         <nav className="hidden lg:block">
           <ul className="flex lg:flex-col lg:items-end xs:space-x-4 lg:space-y-4 xs:justify-between xs:mx-[20px] lg:mx-[-350px] 2xl:mx-[-600px] xs:mt-16 lg:mt-[-140px] 2xl:mt-[-240px] text-right">
             <Link href="/">

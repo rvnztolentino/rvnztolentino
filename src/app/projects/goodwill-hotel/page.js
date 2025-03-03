@@ -93,7 +93,7 @@ const ProjectPage = ({
                         </div>
                     </div>
                     
-                    <p>I&apos;m working on adding more information. Please check back soon!</p>
+                    <p className="text-dark-gray">I&apos;m working on adding more information. Please check back soon!</p>
 
                 </main>
             </div>

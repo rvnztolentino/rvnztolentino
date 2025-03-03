@@ -2,9 +2,14 @@
 
 import { useEffect } from "react";
 import Image from "next/image"
+import { Badge } from "@/components/ui/badge";
 import { Crown } from 'lucide-react';
 
-const LeBron = () => {
+const LeBron = ({
+    title = "Boy oh boy where do I even begin...",
+    date = "February 20, 2025",
+    badges = ["GOAT", "KINGJAMES", "NBA"]
+}) => {
     const scrollToTop = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
@@ -18,7 +23,31 @@ const LeBron = () => {
             <div className="w-full px-4 md:px-16"> {/* DEFAULT SETTING */}
                 <main className="flex flex-col space-y-7 py-8 font-noto-sans"> {/* DEFAULT SETTING */}
                     <Crown width={80} height={80} />
-                    <h1 className="text-4xl text-dark-gray">Boy oh boy where do I even begin...</h1>
+                    <h1 className="text-4xl text-dark-gray">{title}</h1>
+
+                    <p className="border-b border-light-gray-2"></p>
+
+                    <div className="grid grid-cols-2">
+                        <div className="flex-col text-md text-dark-gray space-y-4">
+                            <p>Published on</p>
+                            <p>Tags</p>
+                        </div>
+                        <div className="flex-col text-light-gray text-md text-dark-gray space-y-4">
+                            <p>{date}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {badges.map((badge, index) => (
+                                    <Badge 
+                                    key={index} 
+                                    variant="secondary" 
+                                    className="bg-light-gray-3 hover:bg-light-gray-2 rounded-full"
+                                    >
+                                    {badge}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
                     <p className="border-b border-light-gray-2"></p>
                     
                     <Image src="/thumbnail/lebron.png" alt="lebron.png" width={700} height={600} className="w-full h-full rounded-xl"/>

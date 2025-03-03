@@ -54,7 +54,7 @@ const BlogPage = ({
 
                     <p className="border-b border-light-gray-2"></p>
                     
-                    <p>I&apos;m working on adding more information. Please check back soon!</p>
+                    <p className="text-dark-gray">I&apos;m working on adding more information. Please check back soon!</p>
 
                 </main>
             </div>

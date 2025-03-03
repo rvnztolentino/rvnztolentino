@@ -87,7 +87,7 @@ const ProjectPage = ({
                                 </Button>
                             </ExternalLink>
                             <ExternalLink href={href}>
-                                <Button variant="outline" className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out">Preview</Button>
+                                <Button variant="outline" className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out">Download</Button>
                             </ExternalLink>
                         </div>
                         
