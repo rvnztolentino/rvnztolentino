@@ -27,7 +27,9 @@ const Store = () => {
                         <p className="text-xl">Digital products</p>
                         <p>Showcasing my products, offerings, and digital creations.</p>
                     </div>
-                    <ProductGrid />
+                    <div>
+                    <ProductGrid type="all" />
+                    </div>
                 </main>
             </div>
         </div>

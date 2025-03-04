@@ -86,9 +86,23 @@ const ProjectPage = ({
                                     Open Github Repository
                                 </Button>
                             </ExternalLink>
-                            <ExternalLink href={href}>
-                                <Button variant="outline" className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out">Download</Button>
-                            </ExternalLink>
+                            {href ? (
+                                <ExternalLink href={href}>
+                                    <Button
+                                    variant="ghost"
+                                    className="bg-light-gray-3 rounded-full mb-2 text-black hover:bg-light-gray-2 hover:text-black transition-all duration-300 ease-in-out"
+                                    >
+                                    Download
+                                    </Button>
+                                </ExternalLink>
+                                ) : (
+                                <Button
+                                    variant="ghost"
+                                    className="bg-light-gray-3 rounded-full mb-2 text-light-gray hover:text-light-gray hover:cursor-not-allowed"
+                                >
+                                    Download
+                                </Button>
+                            )}
                         </div>
                         
                         <p>NitroClicker is an open-source console-based autoclicker built in C++ with customizable clicks per second (CPS). Ideal for tasks that require rapid and continuous clicking, it activates when you hold a key.</p>

@@ -12,7 +12,7 @@ const BlogCard = ({
     <Link href={href}>
       <Button
         variant="outline"
-        className="block w-full text-left text-sm text-dark-gray xs:pt-3 lg:pt-5 xs:pb-12 lg:pb-10 rounded-xl bg-white hover:bg-light-gray-3"
+        className="block w-full text-left text-sm text-dark-gray xs:pt-3 lg:pt-5 xs:pb-12 lg:pb-10 rounded-lg bg-white hover:bg-light-gray-3"
       >
         <div className="lg:flex justify-between w-full items-center">
           <span className="flex items-center">

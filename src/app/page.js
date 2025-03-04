@@ -63,7 +63,7 @@ export default function Home() {
             </TabsList>
 
             <TabsContent value="store">
-              <ProductGrid />
+              <ProductGrid type="all" />
             </TabsContent>
 
             <TabsContent value="projects">

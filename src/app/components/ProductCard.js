@@ -7,11 +7,12 @@ import { Badge } from "@/components/ui/badge";
 const ProductCard = ({ 
   name, 
   subtitle,
-  price, 
+  price,
   badges = [], 
   isAvailable = true,
   imageContent,
-  href 
+  href,
+  type = "all",
 }) => {
   return (
     <Link 
@@ -45,7 +46,7 @@ const ProductCard = ({
 
           {/* Price */}
           <div className="mb-3">
-            <span className="text-green-600 font-medium">{price == 0 ? "FREE" : `₱${price}`}</span>
+            <span className="text-green-600 font-medium">{price == 0 ? "FREE" : `$${price}`}</span>
           </div>
 
           {/* Badges */}
@@ -73,27 +74,34 @@ const ProductCard = ({
 };
 
 // Usage
-export default function ProductGrid() {
+export default function ProductGrid({ type }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-auto">
-      <ProductCard
-        name="My Manga Library & Reading Tracker"
-        subtitle="Track & organize your manga reading."
-        price="150"
-        badges={["NOTION TEMPLATE", "NEW"]}
-        isAvailable={false}
-        imageContent={"/thumbnail/mangalibrary.jpg"}
-        href="#"
-      />
-      <ProductCard
-        name="Student Life Dashboard"
-        subtitle="Customizable student management tool."
-        price="0"
-        badges={["NOTION TEMPLATE", "FREE"]}
-        isAvailable={false}
-        imageContent={"/thumbnail/studentdashboard.jpg"}
-        href="#"
-      />
+
+      {(type === "notion" || type === "all") && (
+        <ProductCard
+          name="My Manga Library & Reading Tracker"
+          subtitle="Track & organize your manga reading."
+          price="2.60"
+          badges={["NOTION TEMPLATE", "NEW"]}
+          isAvailable={false}
+          imageContent={"/thumbnail/mangalibrary.jpg"}
+          href="#"
+        />
+      )}
+      
+      {(type === "notion" || type === "all") && (
+        <ProductCard
+          name="Student Life Dashboard"
+          subtitle="Customizable student management tool."
+          price="0"
+          badges={["NOTION TEMPLATE", "FREE"]}
+          isAvailable={false}
+          imageContent={"/thumbnail/studentdashboard.jpg"}
+          href="#"
+        />
+      )}
+      
     </div>
   );
 }

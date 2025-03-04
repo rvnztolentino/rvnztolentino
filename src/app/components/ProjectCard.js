@@ -20,17 +20,6 @@ const ProjectCard = ({
       <Card className="w-full max-h-[390px] bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
         <CardContent className="p-4">
 
-          {/* Image */}
-          <div className="xs:h-48 lg:h-38 bg-white flex items-center justify-center mb-4">
-            <Image 
-                src={imageContent} 
-                width={256}
-                height={256}
-                alt={name}
-                className="object-contain h-256 w-256 rounded-lg border shadow-md"
-              />
-          </div>
-
           {/* Name */}
           <div className="mb-3">
             <span className="text-dark-gray font-medium">{name.length > 25 ? `${name.slice(0, 25)}...` : name}</span>
