@@ -41,7 +41,7 @@ const ProductCard = ({
 
           {/* Name */}
           <div className="mb-3">
-            <span className="text-dark-gray font-medium">{name.length > 25 ? `${name.slice(0, 25)}...` : name}</span>
+            <span title={name} className="text-dark-gray font-medium">{name.length > 25 ? `${name.slice(0, 25)}...` : name}</span>
           </div>
 
           {/* Price */}
@@ -64,7 +64,7 @@ const ProductCard = ({
           
           {/* Subtitle */}
           <div className="mt-3">
-            <span className="text-dark-gray text-xs">{subtitle.length > 40 ? `${subtitle.slice(0, 40)}...` : subtitle}</span>
+            <span title={subtitle} className="text-dark-gray text-xs">{subtitle.length > 40 ? `${subtitle.slice(0, 40)}...` : subtitle}</span>
           </div>
 
         </CardContent>

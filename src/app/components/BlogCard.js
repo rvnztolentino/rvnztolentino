@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { FileText } from 'lucide-react';
+import { FileText, Atom, BatteryCharging, Milestone } from 'lucide-react';
 
 const BlogCard = ({ 
-  title, 
+  title,
+  icon, 
   date, 
-  href 
+  href
 }) => {
   return (
     <Link href={href}>
@@ -16,9 +17,9 @@ const BlogCard = ({
       >
         <div className="lg:flex justify-between w-full items-center">
           <span className="flex items-center">
-            <FileText className="mr-2" />
-            <p className="block xl:hidden">{title.length > 36 ? `${title.slice(0, 36)}...` : title}</p>
-            <p className="xs:hidden xl:block">{title.length > 50 ? `${title.slice(0, 50)}...` : title}</p>
+            <div className="mr-2">{icon}</div>
+            <p title={title} className="block lg:hidden">{title.length > 36 ? `${title.slice(0, 36)}...` : title}</p>
+            <p title={title} className="xs:hidden lg:block">{title.length > 50 ? `${title.slice(0, 50)}...` : title}</p>
           </span>
           <span className="text-light-gray">{date}</span>
         </div>
@@ -33,16 +34,19 @@ export default function BlogGrid() {
     <div className="grid grid-cols-1 gap-4">
       <BlogCard
         title="5 better ways to create a React app"
+        icon={<Atom />}
         date="Feb. 16, 2025"
         href="/blog/5-better-ways-to-create-a-react-app"
       />
       <BlogCard
         title="7 apps + websites for productivity and students 💻"
+        icon={<BatteryCharging />}
         date="Feb. 10, 2025"
         href="/blog/7-apps-websites-for-productivity-and-students"
       />
       <BlogCard
         title="becoming 20 years old."
+        icon={<Milestone />}
         date="Jan. 20, 2025"
         href="/blog/becoming-20-years-old"
       />

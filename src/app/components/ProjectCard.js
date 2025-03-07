@@ -22,7 +22,7 @@ const ProjectCard = ({
 
           {/* Name */}
           <div className="mb-3">
-            <span className="text-dark-gray font-medium">{name.length > 25 ? `${name.slice(0, 25)}...` : name}</span>
+            <span title={name} className="text-dark-gray font-medium">{name.length > 25 ? `${name.slice(0, 25)}...` : name}</span>
           </div>
 
           {/* Badges */}
@@ -48,7 +48,7 @@ const ProjectCard = ({
 
           {/* Description */}
           <div className="mt-3">
-            <span className="text-dark-gray text-xs">{description.length > 40 ? `${description.slice(0, 40)}...` : description}</span>
+            <span title={description} className="text-dark-gray text-xs">{description.length > 40 ? `${description.slice(0, 40)}...` : description}</span>
           </div>
 
         </CardContent>
