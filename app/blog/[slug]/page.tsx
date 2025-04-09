@@ -67,10 +67,16 @@ const posts = [
     `,
     slug: "art-of-minimalism-in-modern-wardrobes",
   },
-]
+];
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = posts.find((post) => post.slug === params.slug)
+interface BlogPostProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function BlogPost({ params }: BlogPostProps) {
+  const post = posts.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound()
