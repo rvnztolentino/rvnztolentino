@@ -70,13 +70,12 @@ const posts = [
 ];
 
 type BlogPostProps = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
-  const post = posts.find((post) => post.slug === params.slug);
+export default async function BlogPost({ params }: BlogPostProps) {
+  const { slug } = await params;
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound()
