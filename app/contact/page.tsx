@@ -10,7 +10,7 @@ export default function Contact() {
         <div className="w-8 h-1 bg-black mb-6"></div>
         <FadeIn delay={50} direction="up">
         <p className="text-gray-600 mb-8">
-          I'll only respond to those proposals that are a good match for my schedule and interests. Thank you!
+          I&apos;ll only respond to those proposals that are a good match for my schedule and interests. Thank you!
         </p>
         </FadeIn>
 

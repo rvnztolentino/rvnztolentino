@@ -4,11 +4,14 @@ import { NextResponse } from "next/server"
 // Initialize the Google Generative AI with your API key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
+type Message = {
+  sender: string;
+  content: string;
+};
+
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json()
-
-    // Get the model
+    const { messages }: { messages: Message[] } = await req.json();
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     // Create a system prompt

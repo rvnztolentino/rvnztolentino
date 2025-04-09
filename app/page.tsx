@@ -32,7 +32,7 @@ export default function Home() {
     }, 3000); // Total time for each name display
     
     return () => clearInterval(interval);
-  }, []);
+  }, [names.length]);
 
   return (
     <PageTransition>
@@ -52,7 +52,7 @@ export default function Home() {
 
           {/* Status badge */}
           <div className="absolute -right-12 top-4 bg-white px-3 py-1 rounded-full shadow-md text-xs flex items-center">
-            <span>yo, i'm renz</span>
+            <span>yo, i&apos;m renz</span>
             <span className="ml-1">👋</span>
           </div>
         </div>

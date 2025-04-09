@@ -11,16 +11,6 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
   const pathname = usePathname()
-  const [isRenz, setIsRenz] = useState(true);
-
-  // Toggles between "Renz" and "レンツ" every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsRenz((prev) => !prev);
-    }, 5000);
-
-    return () => clearInterval(interval); // Cleanup on unmount (reason: memory leak)
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)

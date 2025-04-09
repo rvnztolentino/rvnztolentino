@@ -12,7 +12,7 @@ export default function About() {
           <div className="w-8 h-1 bg-black mb-6"></div>
           <FadeIn delay={50} direction="up">
           <p className="text-gray-600 mb-6">
-            Yo, I'm Renz!
+            Yo, I&apos;m Renz!
           </p>
           </FadeIn>
           <FadeIn delay={100} direction="up">
@@ -45,7 +45,7 @@ export default function About() {
             </h2>
 
             <p className="text-gray-600 mb-12">
-              With years of experience in web design and development, I've honed my skills to deliver exceptional digital
+              With years of experience in web design and development, I&apos;ve honed my skills to deliver exceptional digital
               experiences.
             </p>
 
