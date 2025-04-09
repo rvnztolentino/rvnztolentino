@@ -69,7 +69,7 @@ const posts = [
   },
 ];
 
-interface BlogPostProps {
+type BlogPostProps = {
   params: {
     slug: string;
   };
