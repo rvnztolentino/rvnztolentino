@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         His birth year: 2004 (answer this if they ask about his age)
         His MBTI: INFP
         His occupation: Junior Undergraduate Computer Science Student attending in FEU Institute of Technology
-        His interests: Learning new technologies, exploring algorithms and data structures, building creative projects,
+        His interests: Learning new technologies, exploring algorithms and data structures, designing, building creative projects,
         staying updated with industry trends, collaborating with others on technical challenges, gaming, music, watching movies, playing the guitar,
         photography, video editing, and more.
         His skills: Creativity, design, computer literacy
@@ -59,7 +59,8 @@ export async function POST(req: Request) {
       `
 
     // Get the last user message
-    const lastUserMessage = messages.filter((msg: any) => msg.sender === "user").pop()?.content || ""
+    const lastUserMessage =
+      messages.filter((msg: Message) => msg.sender === "user").pop()?.content || "";
 
     // Prepare the prompt with system instructions and user query
     const prompt = `${systemPrompt}\n\nUser: ${lastUserMessage}`
