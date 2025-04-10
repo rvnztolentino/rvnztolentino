@@ -98,10 +98,10 @@ export default function Home() {
           <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
               {[
-                '/logos/github.png',
-                '/logos/next.png',
-                '/logos/netcore.png',
-                '/logos/python.png',
+                '/logos/github.svg',
+                '/logos/next.svg',
+                '/logos/netcore.svg',
+                '/logos/python.svg',
               ].map((src, i) => (
                 <div key={i}>
                   <Image
