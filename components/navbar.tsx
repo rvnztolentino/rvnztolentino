@@ -16,7 +16,6 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Handle scroll effect with more granular control
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
@@ -28,12 +27,11 @@ export default function Navbar() {
 
   // Calculate opacity based on scroll position (0 to 50px)
   const calculateOpacity = () => {
-    if (isMenuOpen) return 1 // Always solid when menu is open
+    if (isMenuOpen) return 1 // Full opacity when menu is open
     const maxScroll = 100
     return Math.min(scrollY / maxScroll, 0.9) // Max opacity of 0.9
   }
 
-  // Scroll to top when pathname changes
   useEffect(() => {
     window.scrollTo(0, 0)
     setIsMenuOpen(false)
@@ -53,6 +51,7 @@ export default function Navbar() {
     >
       <div className="flex items-center">
         <div className="text-xl font-bold tracking-wider -ml-12" style={{ width: "150px", textAlign: "center" }}>
+          <Link href="/" className="">
           <TypeAnimation
             sequence={[
               'Renz', 
@@ -67,6 +66,7 @@ export default function Navbar() {
             repeat={Infinity}
             style={{ display: 'inline-block' }}
           />
+          </Link>
         </div>
 
         {/* Desktop Navigation - moved to the left with bigger gap */}

@@ -34,23 +34,34 @@ export default function ChatBot() {
   const [isClosing, setIsClosing] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  // Auto scroll to bottom when messages change or when chat is opened
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
   const toggleChat = () => {
     setIsAnimating(true)
     
     if (isOpen) {
-      // Set closing state for the proper animation direction
-      setIsClosing(true)
+      setIsClosing(true) // Set closing state for the proper animation direction
       // When closing, add a delay before actually changing isOpen
       setTimeout(() => {
         setIsOpen(false)
         setIsAnimating(false)
         setIsClosing(false)
       }, 300) // Match this with CSS transition duration
-    } else {
+    } 
+    
+    else {
       setIsClosing(false)
       setIsOpen(true)
       // When opening, we set isAnimating to false after animation completes
       setTimeout(() => {
+        scrollToBottom()
         setIsAnimating(false)
       }, 300)
     }
@@ -127,19 +138,33 @@ export default function ChatBot() {
     }
   }
 
-  // Auto scroll to bottom when messages change or when chat is opened
+  // Check if device is mobile
+  const isMobile = useRef(false)
   useEffect(() => {
-    if (isOpen && !isMinimized && !isAnimating) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    if (typeof window === "undefined") {
+      isMobile.current = false
+    } else {
+      isMobile.current = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     }
-  }, [messages, isOpen, isMinimized, isAnimating])
+  }, [])
+
+  // Auto-open popover after 3 seconds on desktop
+  useEffect(() => {
+    if (!isMobile.current) {
+      const timer = setTimeout(() => {
+        setIsOpen(true)
+      }, 2000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [])
 
   return (
     <>
       {/* Chat Button */}
       <Button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-black/95 hover:bg-white text-white hover:text-black shadow-lg z-50 flex items-center justify-center p-0 transition-all duration-300"
+        className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-black/95 hover:bg-white text-white hover:text-black border border-gray-300 shadow-lg z-50 flex items-center justify-center p-0 transition-all duration-300"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
       </Button>
@@ -159,12 +184,12 @@ export default function ChatBot() {
           {/* Chat Header */}
           <div className="flex items-center justify-between p-3 border-b border-gray-200">
             <div className="flex items-center space-x-3">
-              <Avatar className="h-8 w-8 bg-[#e6d0a5] text-[#121212]">
+              <Avatar className="h-8 w-8 bg-gray-300 text-[#121212]">
                 <AvatarFallback>K</AvatarFallback>
               </Avatar>
               <div>
                 <h3 className="text-black/95 font-medium text-sm">Kei</h3>
-                <p className="text-gray-600 text-xs">Virtual Assistant</p>
+                <p className="text-gray-600 text-xs">AI Assistant</p>
               </div>
             </div>
             <Button variant="ghost" size="icon" className="h-8 w-8 text-black/95" onClick={toggleMinimize}>

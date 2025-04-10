@@ -1,11 +1,15 @@
 import PageTransition from "@/components/page-transition"
 import Link from "next/link"
+import { ArrowLeft } from "lucide-react"
 import FadeIn from "@/components/fade-in"
 
 export default function Contact() {
   return (
     <PageTransition>
-      <div className="min-h-screen pt-24 md:pt-36 px-8 md:px-24 max-w-5xl mx-auto">
+      <div className="min-h-screen pt-24 pb-4 md:pt-36 px-8 md:px-24 max-w-5xl mx-auto">
+        <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+            <ArrowLeft size={16} /> Back to home
+        </Link>
         <h1 className="text-4xl font-bold mb-8">Contact</h1>
         <div className="w-8 h-1 bg-black mb-6"></div>
         <FadeIn delay={50} direction="up">

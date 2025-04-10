@@ -1,56 +1,45 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import PageTransition from "@/components/page-transition"
-import { ShoppingCart } from "lucide-react"
+import { ShoppingCart, ArrowLeft } from "lucide-react"
 import FadeIn from "@/components/fade-in"
 
 export default function Store() {
   const products = [
     {
       id: 1,
-      name: "Minimalist Blazer",
-      price: "$189",
-      category: "Outerwear",
+      name: "Student Life Dashboard",
+      price: "FREE",
+      category: "Notion Template",
       buyLink: "#",
     },
     {
       id: 2,
-      name: "Structured Shirt",
-      price: "$95",
-      category: "Tops",
-      buyLink: "#",
-    },
-    {
-      id: 3,
-      name: "Tailored Trousers",
-      price: "$120",
-      category: "Bottoms",
-      buyLink: "#",
-    },
-    {
-      id: 4,
-      name: "Oversized Coat",
-      price: "$250",
-      category: "Outerwear",
-      buyLink: "#",
-    },
-    {
-      id: 5,
-      name: "Silk Scarf",
-      price: "$75",
-      category: "Accessories",
-      buyLink: "#",
-    },
-    {
-      id: 6,
-      name: "Leather Tote",
-      price: "$195",
-      category: "Accessories",
+      name: "私のマンファ & マンガライブラリ",
+      price: "$2.99",
+      category: "Notion Template",
       buyLink: "#",
     },
   ]
 
+  const [activeProduct, setActiveProduct] = useState<number | null>(null)
+  const handleToggle = (id: number) => {
+    if (activeProduct === id) {
+      setActiveProduct(null) // close if same card tapped again
+    } else {
+      setActiveProduct(id)
+    }
+  }
+
   return (
     <PageTransition>
-      <div className="min-h-screen pt-28 px-8 md:px-16 max-w-6xl mx-auto">
+      <div className="min-h-screen pt-28 pb-4 px-8 md:px-16 max-w-6xl mx-auto">
+        <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+          <ArrowLeft size={16} /> Back to home
+        </Link>
         <h1 className="text-4xl font-bold mb-8">Store</h1>
         <div className="w-8 h-1 bg-black mb-6"></div>
         <FadeIn delay={50} direction="up">
@@ -62,13 +51,24 @@ export default function Store() {
           {products.map((product) => (
             <div key={product.id} className="border border-gray-200 rounded-lg overflow-hidden group">
               {/* Product Image with Hover Button */}
-              <div className="h-48 bg-gray-100 relative">
+              <div className="h-48 bg-gray-100 relative"
+              onClick={() => handleToggle(product.id)}>
                 <div className="flex items-center justify-center h-full">
-                  <span className="text-gray-400">Product Image</span>
+                  {/* <span className="text-gray-400">Product Image</span> */}
+                  <Image
+                    src={`/store/product_${product.id}.jpg`}
+                    alt={product.name}
+                    width={432}
+                    height={432}
+                    className="object-cover h-full w-full"
+                  />
                 </div>
 
                 {/* Hover Buy Button */}
-                <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className={`absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                  ${activeProduct === product.id ? 'opacity-100' : 'opacity-0'} 
+                    md:opacity-0 md:group-hover:opacity-100`}
+                >
                   <a
                     href={product.buyLink}
                     className="px-4 py-2 bg-white text-black rounded-md flex items-center gap-2 hover:bg-gray-100 transition-colors"

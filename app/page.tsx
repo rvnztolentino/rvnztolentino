@@ -11,25 +11,22 @@ import { useState, useEffect } from "react"
 export default function Home() {
   const [currentNameIndex, setCurrentNameIndex] = useState(0);
   const [fadeState, setFadeState] = useState("fade-in");
-  
+
   const names = [
-    'Renz Tolentino',
-    'レンツ トレンティーノ',
-    '任茲 托倫蒂諾'
+    { src: "/title/renztolentino_en.svg", alt: "Renz Tolentino" },
+    { src: "/title/renztolentino_jp.svg", alt: "レンツ トレンティーノ" },
+    { src: "/title/renztolentino_cn.svg", alt: "任茲 托倫蒂諾" },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Start fading out
       setFadeState("fade-out");
-      
-      // After fade out completes, change text and fade in
       setTimeout(() => {
         setCurrentNameIndex((prevIndex) => (prevIndex + 1) % names.length);
         setFadeState("fade-in");
-      }, 1000); // Wait for fade out to complete
+      }, 1000);
       
-    }, 3000); // Total time for each name display
+    }, 3000);
     
     return () => clearInterval(interval);
   }, [names.length]);
@@ -60,16 +57,22 @@ export default function Home() {
         {/* Main content */}
         <FadeIn delay={50} direction="up">
           <div className="text-center max-w-2xl mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
             <span 
-              className={`bg-gradient-to-r from-black to-gray-500 text-transparent bg-clip-text transition-opacity duration-1000 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}
+              className={`text-black transition-opacity duration-1000 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}
               style={{ display: 'inline-block' }}
             >
-              {names[currentNameIndex]}
+              <Image
+                src={names[currentNameIndex].src}
+                alt={names[currentNameIndex].alt}
+                width={432}
+                height={68}
+                className="rounded-lg"
+              />
             </span>
           </h1>
-            <p className="text-gray-600 mb-8 max-w-xs lg:max-w-lg mx-auto">
-              I am an undergraduate Computer Science student, a software engineer, and an aspiring AI engineer with a passion for innovation and technology.
+            <p className="text-md text-gray-600 mb-8 max-w-xs md:max-w-lg mx-auto">
+              Renz is a junior undergraduate computer science student, a software engineer, and an aspiring AI engineer with a passion for innovation and technology.
             </p>
           </div>
         </FadeIn>
@@ -78,12 +81,12 @@ export default function Home() {
         <FadeIn delay={100} direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button variant="outline" className="rounded-full px-8 lg:py-6 h-auto flex items-center border-foreground hover:bg-foreground hover:text-background transition-colors">
+              <Button variant="outline" className="rounded-full px-8 md:py-4 h-auto flex items-center border-black/95 hover:bg-black/95 hover:text-background transition-colors">
                 About Me
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 lg:py-6 h-auto gap-2 flex items-center bg-foreground text-background hover:bg-foreground/80">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 text-background hover:bg-black/60">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -97,8 +100,8 @@ export default function Home() {
               {[
                 '/logos/github.png',
                 '/logos/next.png',
-                '/logos/python.png',
                 '/logos/netcore.png',
+                '/logos/python.png',
               ].map((src, i) => (
                 <div key={i}>
                   <Image

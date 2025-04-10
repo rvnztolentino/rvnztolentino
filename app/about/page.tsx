@@ -1,26 +1,50 @@
 import Image from "next/image"
+import Link from "next/link"
 import PageTransition from "@/components/page-transition"
 import FadeIn from "@/components/fade-in"
+import { ArrowLeft } from "lucide-react"
 
 export default function About() {
+  const descriptions = [
+    {
+      id: 1,
+      text: `Renz worked as a freelance developer for the 剣聖 Client Team (2021-2022), he created and 
+      maintained a Lua 5.4-based scripting API for a custom Minecraft Bedrock Edition client. He designed 
+      features to improve performance, resolved technical issues, and collaborated with the team. He also 
+      programmed and produced its API documentation.`,
+    },
+    {
+      id: 2,
+      text: `Renz is also a member of a research team working on a Comprehensive Road Defect Indexing System 
+      for his undergraduate thesis, which uses a hybrid machine learning approach. His contributions 
+      involve the development of an automated pipeline for road defect detection, classification, and 
+      predictive analysis, applying YOLOv10 for object detection and machine learning techniques to analyze 
+      and forecast potential road damages.`,
+    }
+  ]
+
   return (
     <PageTransition>
       <div className="min-h-screen pt-28 px-8 md:px-16 max-w-5xl mx-auto">
+      <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+        <ArrowLeft size={16} /> Back to home
+      </Link>
       <div className="md:flex md:items-start md:space-x-12 pb-16 md:pb-8">
         <div className="md:w-1/2">
           <h1 className="text-4xl font-bold mb-8">About</h1>
           <div className="w-8 h-1 bg-black mb-6"></div>
           <FadeIn delay={50} direction="up">
           <p className="text-gray-600 mb-6">
-            Yo, I&apos;m Renz!
+            Renz is a junior undergraduate in computer science, a software engineer, and an 
+            aspiring AI engineer passionate about technology and innovation. 
           </p>
           </FadeIn>
           <FadeIn delay={100} direction="up">
           <p className="text-gray-600 mb-6">
-            現在、私のウェブサイトはリニューアル中です。新しいデザインや機能を追加し、さらに使いやすいウェブサイトを目指して準備を進めています。公開までしばらくお待ちいただければ幸いです。ぜひ楽しみにしていてください！
+            {descriptions[0].text}
           </p>
           <p className="text-gray-600 mb-12">
-            現在、私のウェブサイトはリニューアル中です。新しいデザインや機能を追加し、さらに使いやすいウェブサイトを目指して準備を進めています。公開までしばらくお待ちいただければ幸いです。ぜひ楽しみにしていてください！
+            {descriptions[1].text}
           </p>
           </FadeIn>
         </div>

@@ -1,36 +1,40 @@
 import Link from "next/link"
 import PageTransition from "@/components/page-transition"
 import FadeIn from "@/components/fade-in"
+import { ArrowLeft } from "lucide-react"
 
 export default function Blog() {
   const posts = [
     {
       id: 1,
-      title: "The Evolution of Sustainable Fashion",
+      title: "5 better ways to create a React app",
       date: "June 15, 2023",
       excerpt:
-        "Exploring how sustainable practices are reshaping the fashion industry and what it means for consumers and designers alike.",
-      slug: "evolution-of-sustainable-fashion",
+        "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+      slug: "5-better-ways-to-create-a-react-app",
     },
     {
       id: 2,
-      title: "Fashion Week Highlights: New York 2023",
+      title: "7 apps + websites for productivity and students 💻",
       date: "May 28, 2023",
-      excerpt: "A recap of the most innovative and inspiring collections from this year's New York Fashion Week.",
-      slug: "fashion-week-highlights-new-york-2023",
+      excerpt: "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+      slug: "7-apps-websites-for-productivity-and-students",
     },
     {
       id: 3,
-      title: "The Art of Minimalism in Modern Wardrobes",
-      date: "April 10, 2023",
-      excerpt: "How the minimalist approach to fashion can create timeless style while reducing environmental impact.",
-      slug: "art-of-minimalism-in-modern-wardrobes",
+      title: "becoming 20 years old.",
+      date: "Jan. 2, 2025",
+      excerpt: "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+      slug: "becoming-20-years-old",
     },
   ]
 
   return (
     <PageTransition>
       <div className="min-h-screen pt-28 pb-4 px-8 md:px-16 max-w-5xl mx-auto">
+        <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+          <ArrowLeft size={16} /> Back to home
+        </Link>
         <h1 className="text-4xl font-bold mb-8">Blog</h1>
         <div className="w-8 h-1 bg-black mb-6"></div>
         <FadeIn delay={50} direction="up">
