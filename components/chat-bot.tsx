@@ -255,7 +255,7 @@ export default function ChatBot() {
                 onKeyDown={handleKeyDown}
                 placeholder="Type a message..."
                 disabled={isLoading}
-                className="flex-1 bg-white text-black/95 focus-visible:ring-gray-50/30"
+                className="flex-1 bg-white text-black/95 focus-visible:ring-gray-50/30 text-base"
               />
               <Button
                 onClick={handleSendMessage}

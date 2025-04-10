@@ -51,7 +51,7 @@ export default function About() {
         <FadeIn delay={150} direction="up">
         <div className="aspect-[4/5] mt-4">
           <Image
-            src="/images/melmao.jpg"
+            src="/images/aboutme.jpg"
             alt="image"
             width={432}
             height={540}

@@ -81,12 +81,12 @@ export default function Home() {
         <FadeIn delay={100} direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button variant="outline" className="rounded-full px-8 md:py-4 h-auto flex items-center border-black/95 hover:bg-black/95 hover:text-background transition-colors">
+              <Button variant="outline" className="rounded-full px-8 md:py-4 h-auto flex items-center text-black/95 border-black/95 hover:bg-black/95 hover:text-white transition-colors">
                 About Me
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 text-background hover:bg-black/60">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 text-white hover:bg-black/60">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>
