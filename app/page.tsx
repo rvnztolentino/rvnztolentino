@@ -101,7 +101,7 @@ export default function Home() {
                 '/logos/github.svg',
                 '/logos/next.svg',
                 '/logos/netcore.svg',
-                '/logos/python.svg',
+                '/logos/tensorflow.svg',
               ].map((src, i) => (
                 <div key={i}>
                   <Image
@@ -109,7 +109,7 @@ export default function Home() {
                     height={50}
                     width={150}
                     alt={`Logo ${i + 1}`}
-                    className="h-12 w-36 object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    className="h-12 w-36 object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               ))}
