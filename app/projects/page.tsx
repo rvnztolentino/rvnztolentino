@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Road Defect Indexing System",
       description: "An automated road defect indexing system using machine learning for detection, classification, and prediction.",
       github: "https://github.com/rvnztolentino/road-defect-indexing",
-      preview: "/",
+      preview: "https://github.com/rvnztolentino/road-defect-indexing/releases",
     },
     {
       id: 2,
@@ -28,8 +28,8 @@ export default function Projects() {
       id: 3,
       title: "Camlin Arts & Crafts",
       description: "A website for Camlin Arts & Crafts, featuring range of products like magnetic bookmarks, stickers, keychains, and various designs.",
-      github: "https://github.com/rvnztolentino/camlin-vanilla",
-      preview: "https://camlin-arts-crafts.vercel.app/",
+      github: "https://github.com/rvnztolentino/camlin",
+      preview: "https://camlin.vercel.app/",
     },
     {
       id: 4,
