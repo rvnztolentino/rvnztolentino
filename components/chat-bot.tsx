@@ -24,6 +24,29 @@ const initialMessages: Message[] = [
   },
 ]
 
+const formatTextWithLinks = (text: string) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  const parts = text.split(urlRegex)
+  
+  return parts.map((part, index) => {
+    if (urlRegex.test(part)) {
+      return (
+        <a
+          key={`link-${index}`}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          {part}
+        </a>
+      )
+    } else {
+      return <span key={`text-${index}`}>{part}</span>
+    }
+  })
+}
+
 export default function ChatBot() {
   const [isMinimized, setIsMinimized] = useState(true) // Start minimized
   const [messages, setMessages] = useState<Message[]>(initialMessages)
@@ -176,7 +199,13 @@ export default function ChatBot() {
                   message.sender === "user" ? "bg-black/95 text-white" : "bg-black/10 text-black"
                 }`}
               >
-                <p className="text-sm">{message.content}</p>
+                {/* Use the formatTextWithLinks function for bot messages */}
+                <div className="text-sm">
+                  {message.sender === "bot" 
+                    ? formatTextWithLinks(message.content)
+                    : message.content
+                  }
+                </div>
                 <p className="text-xs opacity-70 mt-1">
                   {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                 </p>
