@@ -64,10 +64,6 @@ export default function ChatBot() {
     scrollToBottom()
   }, [messages, isMinimized])
 
-  const toggleMinimize = () => {
-    setIsMinimized(!isMinimized)
-  }
-
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return
 
