@@ -7,19 +7,12 @@ import { ArrowLeft } from "lucide-react"
 export default function About() {
   const descriptions = [
     {
-      id: 1,
-      text: `Renz worked as a freelance developer for the 剣聖 Client Team (2021-2022), he created and 
-      maintained a Lua 5.4-based scripting API for a custom Minecraft Bedrock Edition client. He designed 
-      features to improve performance, resolved technical issues, and collaborated with the team. He also 
-      programmed and produced its API documentation.`,
-    },
-    {
-      id: 2,
-      text: `Renz is also a member of a research team working on a Comprehensive Road Defect Indexing System 
-      for his undergraduate thesis, which uses a hybrid machine learning approach. His contributions 
-      involve the development of an automated pipeline for road defect detection, classification, and 
-      predictive analysis, applying YOLOv10 for object detection and machine learning techniques to analyze 
-      and forecast potential road damages.`,
+      id: 0,
+      text: `Renz is part of a research team developing a Comprehensive Road Defect Indexing System 
+      that utilizes a hybrid machine learning approach. His contributions focus on creating an automated 
+      pipeline for detecting, classifying, and predicting road defects. Using YOLOv10 for object 
+      detection and advanced machine learning techniques, he also developed the mapping system, which 
+      lets users view the locations of road defects on an interactive map.`,
     }
   ]
 
@@ -30,7 +23,7 @@ export default function About() {
         <ArrowLeft size={16} /> Back to home
       </Link>
       <div className="md:flex md:items-start md:space-x-12 pb-16 md:pb-8">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 text-justify">
           <h1 className="text-4xl font-bold mb-8">About</h1>
           <div className="w-8 h-1 bg-black mb-6"></div>
           <FadeIn delay={50} direction="up">
@@ -40,11 +33,11 @@ export default function About() {
           </p>
           </FadeIn>
           <FadeIn delay={100} direction="up">
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 justify">
             {descriptions[0].text}
           </p>
           <p className="text-gray-600 mb-12">
-            {descriptions[1].text}
+            {/*descriptions[1].text*/}
           </p>
           </FadeIn>
         </div>

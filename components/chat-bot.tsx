@@ -165,11 +165,15 @@ export default function ChatBot() {
   return (
     <div
       className={`fixed bottom-6 right-6 bg-white border border-gray-200 rounded-md shadow-lg z-40 flex flex-col transition-all duration-300 ease-out
-        ${isMinimized ? "h-16 w-48" : "h-[450px] w-80 sm:w-96"}
+        ${isMinimized ? "h-16 w-38" : "h-[450px] w-80 sm:w-96"}
         opacity-100 translate-y-0`}
     >
       {/* Chat Header */}
-      <div className="flex items-center justify-between p-3 border-b border-gray-200">
+      <div
+        className="flex items-center justify-between p-3 border-b border-gray-200 rounded-md hover:bg-black/5 cursor-pointer"  
+        onClick={() => setIsMinimized((prev) => !prev)}
+        title={isMinimized ? "Open chat" : "Minimize chat"}
+      >
         <div className="flex items-center space-x-3 overflow-hidden">
           <Avatar className="h-8 w-8 flex-shrink-0 bg-gray-300 text-[#121212]">
             <AvatarFallback>K</AvatarFallback>
@@ -179,9 +183,6 @@ export default function ChatBot() {
             <p className="text-gray-600 text-xs truncate">AI Assistant</p>
           </div>
         </div>
-        <Button variant="ghost" size="icon" className="h-8 w-8 flex-shrink-0 text-black/95" onClick={toggleMinimize}>
-          {isMinimized ? <Maximize2 size={16} /> : <Minimize2 size={16} />}
-        </Button>
       </div>
 
       {/* Chat Messages */}

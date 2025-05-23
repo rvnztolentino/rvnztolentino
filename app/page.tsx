@@ -100,8 +100,8 @@ export default function Home() {
               {[
                 '/logos/github.svg',
                 '/logos/next.svg',
-                '/logos/netcore.svg',
                 '/logos/tensorflow.svg',
+                '/logos/docker-logo-blue.svg',
               ].map((src, i) => (
                 <div key={i}>
                   <Image
