@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { Send, Minimize2, Maximize2 } from "lucide-react"
+import { Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
@@ -48,7 +48,7 @@ const formatTextWithLinks = (text: string) => {
 }
 
 export default function ChatBot() {
-  const [isMinimized, setIsMinimized] = useState(true) // Start minimized
+  const [isMinimized, setIsMinimized] = useState(true)
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
