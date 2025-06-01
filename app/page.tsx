@@ -72,7 +72,7 @@ export default function Home() {
             </span>
           </h1>
             <p className="text-md text-gray-600 mb-8 max-w-xs md:max-w-lg mx-auto">
-              Renz is a junior undergraduate computer science student, a software engineer, and an aspiring AI engineer with a passion for innovation and technology.
+              Thanks for visiting my website! Feel free to explore the various pages available in the menu :)
             </p>
           </div>
         </FadeIn>
