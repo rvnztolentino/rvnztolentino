@@ -11,7 +11,7 @@ type Message = {
 export async function POST(req: Request) {
   try {
     const { messages }: { messages: Message[] } = await req.json();
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" })
 
     // System prompt
     const systemPrompt =`Instruction:
