@@ -24,7 +24,7 @@ export default function Contact() {
               <h2 className="text-2xl font-bold mb-4">Send a message</h2>
               {/* Tally Form Embed */}
               <iframe
-                src="https://tally.so/embed/mRbVWK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                src="https://tally.so/embed/wz44pg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 width="100%"
                 height="280"
                 frameBorder="0"
