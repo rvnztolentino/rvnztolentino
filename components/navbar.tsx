@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 import { Menu, X } from 'lucide-react'
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { TypeAnimation } from 'react-type-animation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -50,44 +49,31 @@ export default function Navbar() {
       style={navbarStyle}
     >
       <div className="flex items-center">
-        <div className="text-xl font-bold tracking-wider -ml-12" style={{ width: "150px", textAlign: "center" }}>
+        <div className="text-sm tracking-widest font-semibold ml-2">
           <Link href="/" className="">
-          <TypeAnimation
-            sequence={[
-              'Renz', 
-              2000,
-              'レンツ',
-              2000,
-              '任茲',
-              2000,
-            ]}
-            wrapper="span"
-            cursor={true}
-            repeat={Infinity}
-            style={{ display: 'inline-block' }}
-          />
+          RENZ
           </Link>
         </div>
 
         {/* Desktop Navigation - moved to the left with bigger gap */}
-        <div className="hidden lg:flex items-center ml-36 space-x-16">
-          <Link href="/" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            Home
+        <div className="hidden lg:flex items-center ml-36 space-x-16 text-sm text-black/60 tracking-wider">
+          <Link href="/" className="text-black/50 hover:text-black">
+            HOME
           </Link>
-          <Link href="/about" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            About
+          <Link href="/about" className="text-black/50 hover:text-black">
+            ABOUT
           </Link>
-          <Link href="/projects" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            Projects
+          <Link href="/projects" className="text-black/50 hover:text-black">
+            PROJECTS
           </Link>
-          <Link href="/blog" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            Blog
+          <Link href="/blog" className="text-black/50 hover:text-black">
+            BLOG
           </Link>
-          <Link href="/store" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            Store
+          <Link href="/store" className="text-black/50 hover:text-black">
+            STORE
           </Link>
-          <Link href="/contact" className="text-sm tracking-wider text-muted-foreground hover:text-black">
-            Contact
+          <Link href="/contact" className="text-black/50 hover:text-black">
+            CONTACT
           </Link>
         </div>
 

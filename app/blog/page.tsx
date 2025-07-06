@@ -7,24 +7,24 @@ export default function Blog() {
   const posts = [
     {
       id: 1,
-      title: "5 better ways to create a React app",
+      title: "React starter guide (no CRA)",
       date: "June 15, 2023",
       excerpt:
-        "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+        "A quick list of better ways to start a React app, without using create-react-app.",
       slug: "5-better-ways-to-create-a-react-app",
     },
     {
       id: 2,
       title: "7 apps + websites for productivity and students 💻",
       date: "May 28, 2023",
-      excerpt: "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+      excerpt: "Some apps and sites that helped me stay focused and finish school work on time.",
       slug: "7-apps-websites-for-productivity-and-students",
     },
     {
       id: 3,
-      title: "becoming 20 years old.",
+      title: "Becoming 20 years old.",
       date: "Jan. 2, 2025",
-      excerpt: "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.",
+      excerpt: "Turning 20. Just some thoughts about growing up and moving forward.",
       slug: "becoming-20-years-old",
     },
   ]
@@ -36,9 +36,9 @@ export default function Blog() {
           <ArrowLeft size={16} /> Back to home
         </Link>
         <h1 className="text-4xl font-bold mb-8">Blog</h1>
-        <div className="w-8 h-1 bg-black mb-6"></div>
+        <div className="w-8 h-1 bg-black/80 mb-6"></div>
         <FadeIn delay={50} direction="up">
-          <p className="text-gray-600 mb-8">Sharing my knowledge, insights, and personal stories through detailed guides, step-by-step tutorials, and more.</p>
+          <p className="text-black/60 mb-8">Sharing my knowledge, insights, and personal stories through detailed guides, step-by-step tutorials, and more.</p>
         </FadeIn>
 
         <FadeIn delay={100} direction="up">
@@ -47,8 +47,8 @@ export default function Blog() {
               <article key={post.id} className="border-b border-gray-200 pb-8">
                 <Link href={`/blog/${post.slug}`} className="block group">
                   <h2 className="text-2xl font-bold mb-2 group-hover:text-gray-600 transition-colors">{post.title}</h2>
-                  <p className="text-gray-500 mb-4">{post.date}</p>
-                  <p className="text-gray-600">{post.excerpt}</p>
+                  <p className="text-black/60 mb-4">{post.date}</p>
+                  <p className="text-black/75">{post.excerpt}</p>
                 </Link>
               </article>
             ))}

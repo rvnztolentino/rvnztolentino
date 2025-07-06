@@ -63,10 +63,10 @@ export default function Projects() {
           <ArrowLeft size={16} /> Back to home
         </Link>
         <h1 className="text-4xl font-bold mb-8">Projects</h1>
-        <div className="w-8 h-1 bg-black mb-6"></div>
+        <div className="w-8 h-1 bg-black/80 mb-6"></div>
 
         <FadeIn delay={50} direction="up">
-          <p className="text-gray-600 mb-8">
+          <p className="text-black/60 mb-8">
             Highlighting my personal and collaborative projects, and experiments.
           </p>
         </FadeIn>

@@ -14,8 +14,7 @@ export default function Home() {
 
   const names = [
     { src: "/title/renztolentino_en.svg", alt: "Renz Tolentino" },
-    { src: "/title/renztolentino_jp.svg", alt: "レンツ トレンティーノ" },
-    { src: "/title/renztolentino_cn.svg", alt: "任茲 托倫蒂諾" },
+    { src: "/title/renztolentino_jp.svg", alt: "レンツ トレンティーノ" }
   ];
 
   useEffect(() => {
@@ -71,7 +70,7 @@ export default function Home() {
               />
             </span>
           </h1>
-            <p className="text-md text-gray-600 mb-8 max-w-xs md:max-w-lg mx-auto">
+            <p className="text-md text-black/60 mb-8 max-w-xs md:max-w-lg mx-auto">
               Thanks for visiting my website! Feel free to explore the various pages available in the menu :)
             </p>
           </div>
@@ -86,7 +85,7 @@ export default function Home() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 text-white hover:bg-black/60">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 hover:underline text-white hover:bg-white hover:text-black/95 transition-colors">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>
