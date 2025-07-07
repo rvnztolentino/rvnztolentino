@@ -11,9 +11,9 @@ export default function Contact() {
             <ArrowLeft size={16} /> Back to home
         </Link>
         <h1 className="text-4xl font-bold mb-8">Contact</h1>
-        <div className="w-8 h-1 bg-black mb-6"></div>
+        <div className="w-8 h-1 bg-black/90 mb-6"></div>
         <FadeIn delay={50} direction="up">
-        <p className="text-gray-600 mb-8">
+        <p className="text-black/60 mb-8">
           I&apos;ll only respond to those proposals that are a good match for my schedule and interests. Thank you!
         </p>
         </FadeIn>
@@ -40,19 +40,19 @@ export default function Contact() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium mb-1">Location</h3>
-                <p className="text-gray-600">
+                <p className="text-black/60">
                   Quezon City, Metro Manila, Philippines
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-medium mb-1">Email</h3>
-                <p className="text-gray-600">rvnztolentino@outlook.com</p>
+                <p className="text-black/60">rvnztolentino@outlook.com</p>
               </div>
 
               <div>
                 <h3 className="text-lg font-medium mb-1">Phone</h3>
-                <p className="text-gray-600">+63 906 069 6544</p>
+                <p className="text-black/60">+63 906 069 6544</p>
               </div>
 
               <div>
@@ -64,7 +64,7 @@ export default function Contact() {
 
               {/*<div>
                 <h3 className="text-lg font-medium mb-1">Hours</h3>
-                <p className="text-gray-600">
+                <p className="text-black/60">
                   N/A
                 </p>
               </div> */}

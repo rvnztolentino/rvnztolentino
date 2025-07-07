@@ -58,22 +58,22 @@ export default function Navbar() {
         {/* Desktop Navigation - moved to the left with bigger gap */}
         <div className="hidden lg:flex items-center ml-36 space-x-16 text-sm text-black/60 tracking-wider">
           <Link href="/" className="text-black/50 hover:text-black">
-            HOME
+            home
           </Link>
           <Link href="/about" className="text-black/50 hover:text-black">
-            ABOUT
+            about
           </Link>
           <Link href="/projects" className="text-black/50 hover:text-black">
-            PROJECTS
+            projects
           </Link>
           <Link href="/blog" className="text-black/50 hover:text-black">
-            BLOG
+            blog
           </Link>
           <Link href="/store" className="text-black/50 hover:text-black">
-            STORE
+            store
           </Link>
           <Link href="/contact" className="text-black/50 hover:text-black">
-            CONTACT
+            contact
           </Link>
         </div>
 

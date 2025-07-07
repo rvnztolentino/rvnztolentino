@@ -38,7 +38,7 @@ export default function About() {
       <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
         <ArrowLeft size={16} /> Back to home
       </Link>
-      <div className="md:flex md:items-start md:space-x-12 pb-16 md:-mb-20">
+      <div className="md:flex md:items-start md:space-x-12 pb-16 md:-mb-6">
         <div className="md:w-1/2">
           <h1 className="text-4xl font-bold mb-8">About</h1>
           <div className="w-8 h-1 bg-black/80 mb-6"></div>
@@ -49,7 +49,7 @@ export default function About() {
           </FadeIn>
           <FadeIn delay={100} direction="up">
           <p className="text-black/60 mb-6">
-            I'm currently a junior computer science undergraduate and software engineer.
+            I&apos;m currently a junior computer science undergraduate and software engineer.
           </p>
           </FadeIn>
           <FadeIn delay={150} direction="up">
@@ -59,13 +59,13 @@ export default function About() {
           </FadeIn>
         </div>
         <FadeIn delay={150} direction="up">
-        <div className="aspect-[4/5] mt-4">
+        <div className="aspect-square">
           <Image
             src="/images/aboutme.jpg"
             alt="image"
             width={432}
             height={432}
-            className="object-cover w-[400px] h-[400px] rounded-lg shadow-lg"
+            className="object-cover w-[350px] h-[350px] rounded-md shadow-lg"
           />
         </div>
         </FadeIn>
@@ -78,8 +78,8 @@ export default function About() {
               Skills & <span className="italic">Expertise</span>
             </h2>
 
-            <p className="text-black/60 mb-12">
-              With years of experience in web design and development, I&apos;ve honed my skills to deliver exceptional digital
+            <p className="text-black/60 mb-8">
+              With years of experience in development, I&apos;ve honed my skills to deliver exceptional digital
               experiences.
             </p>
 
