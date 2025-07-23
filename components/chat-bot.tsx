@@ -175,7 +175,7 @@ export default function ChatBot() {
             <AvatarFallback>K</AvatarFallback>
           </Avatar>
           <div className="truncate">
-            <h3 className="text-black/95 font-medium text-sm truncate">Kuro</h3>
+            <h3 className="text-black/95 font-medium text-sm truncate">Mr. Kuro</h3>
             <p className="text-gray-600 text-xs truncate">AI Assistant</p>
           </div>
         </div>
