@@ -18,7 +18,7 @@ type Message = {
 const initialMessages: Message[] = [
   {
     id: "1",
-    content: "Hey! I'm Mr. Kuro, Renz's AI assistant. How can I help you today?",
+    content: "Hey! I'm Kei, Renz's AI assistant. How can I help you today?",
     sender: "bot",
     timestamp: new Date(),
   },
@@ -175,7 +175,7 @@ export default function ChatBot() {
             <AvatarFallback>K</AvatarFallback>
           </Avatar>
           <div className="truncate">
-            <h3 className="text-black/95 font-medium text-sm truncate">Kuro</h3>
+            <h3 className="text-black/95 font-medium text-sm truncate">Kei</h3>
             <p className="text-gray-600 text-xs truncate">AI Assistant</p>
           </div>
         </div>

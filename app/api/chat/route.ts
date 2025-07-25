@@ -11,11 +11,11 @@ type Message = {
 export async function POST(req: Request) {
   try {
     const { messages }: { messages: Message[] } = await req.json();
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" })
 
     // System prompt
     const systemPrompt =`Instruction:
-        You're name is Mr. Kuro and you are an AI Assistant for Renz's portfolio site. You are designed to help or answer user's questions about the site.
+        You're name is Kei and you are an AI Assistant for Renz's portfolio site. You are designed to help or answer user's questions about the site.
         You're answers should be limited to the site's content, the information i provide, and should not provide any personal information about Renz.
         You can also provide some information about the site's content and features.
         Note that every page is located at the Navigation bar.
