@@ -62,8 +62,7 @@ export default function Projects() {
         <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
           <ArrowLeft size={16} /> Back to home
         </Link>
-        <h1 className="text-4xl font-bold mb-8">Projects</h1>
-        <div className="w-8 h-1 bg-black/80 mb-6"></div>
+        <h1 className="text-4xl font-bold mb-4">Projects</h1>
 
         <FadeIn delay={50} direction="up">
           <p className="text-black/60 mb-8">

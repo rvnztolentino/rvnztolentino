@@ -80,12 +80,12 @@ export default function Home() {
         <FadeIn delay={100} direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button variant="outline" className="rounded-full px-8 md:py-4 h-auto flex items-center text-black/95 border-black/95 hover:bg-black/95 hover:text-white transition-colors">
-                About Me
+              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto flex items-center text-black/95 border-black/95 hover:bg-black/95 hover:text-white transition-colors">
+                About
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 hover:underline text-white hover:bg-white hover:text-black/95 transition-colors">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 border border-black text-white hover:bg-white hover:text-black/95 transition-colors">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={200}>
+        {/* <FadeIn delay={200}>
           <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
               {[
@@ -114,17 +114,17 @@ export default function Home() {
               ))}
             </div>
           </section>
-        </FadeIn>
+        </FadeIn> */}
 
         {/* Services Section */}
         <FadeIn delay={100}>
-          <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
+          <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <FadeIn delay={0} direction="up">
                 <div className="bg-black/95 p-8 rounded-sm">
                   <h3 className="text-xl font-medium mb-4 text-white">PROJECTS</h3>
                   <p className="text-white/70 mb-6">
-                    These are the projects I’ve worked on, built from the ground up, using different tools, languages, and frameworks to create practical solutions.
+                    These are projects I’ve built from the ground up, using different tools, languages, and frameworks to create practical solutions.
                   </p>
                   <Link href="/about" className="text-white text-sm flex items-center gap-2 hover:underline">
                     MORE <ArrowRight size={14} />
@@ -133,9 +133,9 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={50} direction="up">
                 <div className="bg-black/95 p-8 rounded-sm">
-                  <h3 className="text-xl font-medium mb-4 text-white">BLOG</h3>
+                  <h3 className="text-xl font-medium mb-4 text-white">BLOG POSTS</h3>
                   <p className="text-white/70 mb-6">
-                  This is where I share what I’ve learned, write about tools and techniques I’ve used, and explore topics that interest me in tech.
+                    This is where I share what I’ve learned, write about tools and techniques I’ve used, and explore topics that interest me most.
                   </p>
                   <Link href="/blog" className="text-white text-sm flex items-center gap-2 hover:underline">
                     MORE <ArrowRight size={14} />

@@ -40,8 +40,7 @@ export default function About() {
       </Link>
       <div className="md:flex md:items-start md:space-x-12 pb-16 md:-mb-6">
         <div className="md:w-1/2">
-          <h1 className="text-4xl font-bold mb-8">About</h1>
-          <div className="w-8 h-1 bg-black/80 mb-6"></div>
+          <h1 className="text-4xl font-bold mb-4">About</h1>
           <FadeIn delay={50} direction="up">
           <p className="text-black/60 mb-6">
             Hey, I’m Renz.
