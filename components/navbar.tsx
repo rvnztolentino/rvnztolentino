@@ -112,20 +112,6 @@ export default function Navbar() {
                 Projects
               </Link>
               <Link
-                href="/blog"
-                className="text-sm uppercase tracking-wider hover:text-muted-foreground"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/store"
-                className="text-sm uppercase tracking-wider hover:text-muted-foreground"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Store
-              </Link>
-              <Link
                 href="/contact"
                 className="text-sm uppercase tracking-wider hover:text-muted-foreground"
                 onClick={() => setIsMenuOpen(false)}

@@ -71,7 +71,7 @@ export default function Projects() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-28 pb-4 px-8 md:px-16 max-w-6xl mx-auto">
+      <div className="min-h-screen pt-28 pb-16 px-8 md:px-16 max-w-6xl mx-auto">
         <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
           <ArrowLeft size={16} /> Back to home
         </Link>

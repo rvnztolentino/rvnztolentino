@@ -6,7 +6,7 @@ import FadeIn from "@/components/fade-in"
 export default function Contact() {
   return (
     <PageTransition>
-      <div className="min-h-screen pt-24 pb-4 md:pt-36 px-8 md:px-24 max-w-5xl mx-auto">
+      <div className="min-h-screen pt-24 pb-16 md:pt-36 px-8 md:px-24 max-w-5xl mx-auto">
         <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
             <ArrowLeft size={16} /> Back to home
         </Link>
