@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from 'lucide-react'
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -49,30 +50,25 @@ export default function Navbar() {
       style={navbarStyle}
     >
       <div className="flex items-center">
-        <div className="text-sm tracking-widest font-semibold ml-2">
+        <div className="text-md tracking-widest font-semibold ml-2">
           <Link href="/" className="">
-          RENZ
+            <Image
+              src="/logos/RT.svg"
+              alt="RENZ"
+              width={100}
+              height={100}
+              className="w-auto h-5"
+            />
           </Link>
         </div>
 
-        {/* Desktop Navigation - moved to the left with bigger gap */}
-        <div className="hidden lg:flex items-center ml-36 space-x-16 text-sm text-black/60 tracking-wider">
-          <Link href="/" className="text-black/50 hover:text-black">
-            home
-          </Link>
-          <Link href="/about" className="text-black/50 hover:text-black">
-            about
-          </Link>
-          <Link href="/projects" className="text-black/50 hover:text-black">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center space-x-6 text-sm text-black/60 tracking-wider ml-auto">
+          <Link href="/projects" className="hover:text-black">
             projects
           </Link>
-          <Link href="/blog" className="text-black/50 hover:text-black">
-            blog
-          </Link>
-          <Link href="/store" className="text-black/50 hover:text-black">
-            store
-          </Link>
-          <Link href="/contact" className="text-black/50 hover:text-black">
+          <p>//</p>
+          <Link href="/contact" className="hover:text-black">
             contact
           </Link>
         </div>

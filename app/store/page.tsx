@@ -28,7 +28,6 @@ export default function Store() {
 
   // Extract unique categories
   const categories = ["All Products", ...Array.from(new Set(products.map(p => p.category)))]
-
   const [selectedCategory, setSelectedCategory] = useState("All Products")
   const [activeProduct, setActiveProduct] = useState<number | null>(null)
   const handleToggle = (id: number) => {
@@ -58,7 +57,6 @@ export default function Store() {
         {/* Category Selector */}
         <FadeIn delay={75} direction="up">
           <div className="mb-8">
-
             {/* Mobile: shadcn/ui Combobox (shown on small screens only) */}
             <div className="block md:hidden">
               <CategoryCombobox
@@ -86,9 +84,9 @@ export default function Store() {
                 </button>
               ))}
             </div>
-
           </div>
         </FadeIn>
+        
         <FadeIn delay={100} direction="up">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (

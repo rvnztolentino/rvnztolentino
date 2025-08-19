@@ -70,8 +70,8 @@ export default function Home() {
               />
             </span>
           </h1>
-            <p className="text-md text-black/60 mb-8 max-w-xs md:max-w-lg mx-auto">
-              Thanks for visiting my website! Feel free to explore the various pages available in the menu :)
+            <p className="text-md text-black/55 mb-8 max-w-xs md:max-w-lg mx-auto font-normal">
+              Full-Stack Developer · Cloud Engineer
             </p>
           </div>
         </FadeIn>
@@ -80,12 +80,12 @@ export default function Home() {
         <FadeIn delay={100} direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto flex items-center text-black/95 border-black/95 hover:bg-black/95 hover:text-white transition-colors">
+              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto flex items-center text-black/75 border-black/75 hover:bg-black/75 hover:text-white transition-colors">
                 About
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/95 border border-black text-white hover:bg-white hover:text-black/95 transition-colors">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/75 border border-black/75 text-white hover:bg-white hover:text-black/75 transition-colors">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -118,44 +118,112 @@ export default function Home() {
 
         {/* Services Section */}
         <FadeIn delay={100}>
-          <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
+          <section className="pt-8 md:pt-24 pb-0 md:pb-4 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <FadeIn delay={0} direction="up">
-                <div className="bg-black/95 p-8 rounded-sm">
-                  <h3 className="text-xl font-medium mb-4 text-white">PROJECTS</h3>
-                  <p className="text-white/70 mb-6">
-                    These are projects I’ve built from the ground up, using different tools, languages, and frameworks to create practical solutions.
-                  </p>
-                  <Link href="/about" className="text-white text-sm flex items-center gap-2 hover:underline">
-                    MORE <ArrowRight size={14} />
-                  </Link>
-                </div>
+                <Image
+                  src="/images/test.jpg"
+                  alt="Test Image"
+                  width={1780}
+                  height={1080}
+                  className="hidden md:block w-full h-auto mt-8 rounded-lg shadow-lg"
+                />
               </FadeIn>
               <FadeIn delay={50} direction="up">
-                <div className="bg-black/95 p-8 rounded-sm">
-                  <h3 className="text-xl font-medium mb-4 text-white">BLOG POSTS</h3>
-                  <p className="text-white/70 mb-6">
-                    This is where I share what I’ve learned, write about tools and techniques I’ve used, and explore topics that interest me most.
-                  </p>
-                  <Link href="/blog" className="text-white text-sm flex items-center gap-2 hover:underline">
-                    MORE <ArrowRight size={14} />
-                  </Link>
-                </div>
+                <Image
+                  src="/images/test.jpg"
+                  alt="Test Image"
+                  width={1780}
+                  height={1080}
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
               </FadeIn>
               <FadeIn delay={100} direction="up">
-                <div className="bg-black/95 p-8 rounded-sm">
-                  <h3 className="text-xl font-medium mb-4 text-white">STORE</h3>
-                  <p className="text-white/70 mb-6">
-                    A collection of tools, templates, and products I’ve designed and developed, made available for anyone to use or purchase with ease.
-                  </p>
-                  <Link href="/store" className="text-white text-sm flex items-center gap-2 hover:underline">
-                    MORE <ArrowRight size={14} />
-                  </Link>
-                </div>
+                <Image
+                  src="/images/test.jpg"
+                  alt="Test Image"
+                  width={1780}
+                  height={1080}
+                  className="hidden md:block w-full h-auto mt-8 rounded-lg shadow-lg"
+                />
               </FadeIn>
             </div>
           </section>
         </FadeIn>
+
+        {/* CTA Button */}
+        <FadeIn delay={100} direction="up">
+          <div className="pb-16 flex flex-col items-center space-y-2">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight">My Projects</h1>
+            <p className="text-md text-black/55 mb-4 max-w-xs md:max-w-[700px] mx-auto font-normal">
+              These are projects I’ve built from the ground up, using different tools, languages, and frameworks to create practical solutions.
+            </p>
+            <Link href="/contact">
+              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto gap-2 flex items-center text-black/75 border-black/75 hover:bg-black/75 hover:text-white transition-colors">
+                View Projects
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </FadeIn>
+
+        <div className="pt-24 pb-16 md:pt-6 px-8 md:px-2 text-left">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">Contact</h1>
+        <FadeIn delay={50} direction="up">
+        <p className="text-black/55 mb-8 font-normal text-center">
+          I&apos;ll only respond to those proposals that are a good match for my schedule and interests. Thank you!
+        </p>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <FadeIn delay={100} direction="up">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Send a message</h2>
+              {/* Tally Form Embed */}
+              <iframe
+                src="https://tally.so/embed/wz44pg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                width="100%"
+                height="280"
+                frameBorder="0"
+                title="Contact Form"
+                className=""
+              ></iframe>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={150} direction="up">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-medium mb-1">Location</h3>
+                <p className="text-black/60">
+                  Quezon City, Metro Manila, Philippines
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-medium mb-1">Email</h3>
+                <p className="text-black/60">rvnztolentino@outlook.com</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-medium mb-1">Phone</h3>
+                <p className="text-black/60">+63 906 069 6544</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-medium mb-1">LinkedIn</h3>
+                <Link href="https://linkedin.com/in/rvnztolentino" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline transition-colors duration-200">
+                  https://linkedin.com/in/rvnztolentino
+                </Link>
+              </div>
+            </div>
+          </div>
+          </FadeIn>
+        </div>
+      </div>
+
       </div>
     </PageTransition>
   )

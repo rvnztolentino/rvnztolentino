@@ -60,13 +60,6 @@ export default function Contact() {
                   https://linkedin.com/in/rvnztolentino
                 </Link>
               </div>
-
-              {/*<div>
-                <h3 className="text-lg font-medium mb-1">Hours</h3>
-                <p className="text-black/60">
-                  N/A
-                </p>
-              </div> */}
             </div>
           </div>
           </FadeIn>
