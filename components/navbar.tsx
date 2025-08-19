@@ -67,7 +67,7 @@ export default function Navbar() {
           <Link href="/projects" className="hover:text-black">
             projects
           </Link>
-          <p>//</p>
+          <span className="text-black/60">{"//"}</span>
           <Link href="/contact" className="hover:text-black">
             contact
           </Link>
