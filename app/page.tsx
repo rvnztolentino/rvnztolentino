@@ -153,7 +153,7 @@ export default function Home() {
 
         {/* CTA Button */}
         <FadeIn delay={100} direction="up">
-          <div className="pb-16 flex flex-col items-center space-y-2">
+          <div className="pb-28 md:pb-20 flex flex-col items-center space-y-2">
             <h1 className="text-3xl md:text-4xl font-bold leading-tight">My Projects</h1>
             <p className="text-md text-black/55 mb-4 max-w-xs md:max-w-[700px] mx-auto font-normal">
               These are projects I’ve built from the ground up, using different tools, languages, and frameworks to create practical solutions.
@@ -166,63 +166,6 @@ export default function Home() {
             </Link>
           </div>
         </FadeIn>
-
-        <div className="pt-6 pb-16 md:pt-4 px-8 md:px-2 text-left">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">Contact</h1>
-          <FadeIn delay={50} direction="up">
-          <p className="text-black/55 mb-8 font-normal text-center">
-            I&apos;ll only respond to those proposals that are a good match for my schedule and interests. Thank you!
-          </p>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <FadeIn delay={100} direction="up">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Send a message</h2>
-                {/* Tally Form Embed */}
-                <iframe
-                  src="https://tally.so/embed/wz44pg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  width="100%"
-                  height="280"
-                  frameBorder="0"
-                  title="Contact Form"
-                  className=""
-                ></iframe>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150} direction="up">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Location</h3>
-                    <p className="text-black/60">
-                      Quezon City, Metro Manila, Philippines
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Email</h3>
-                    <p className="text-black/60">rvnztolentino@outlook.com</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">Phone</h3>
-                    <p className="text-black/60">+63 906 069 6544</p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-medium mb-1">LinkedIn</h3>
-                    <Link href="https://linkedin.com/in/rvnztolentino" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline transition-colors duration-200">
-                      https://linkedin.com/in/rvnztolentino
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
       </div>
     </PageTransition>
   )
