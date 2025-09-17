@@ -32,8 +32,7 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen flex flex-col items-center pt-24 md:pt-[150px] px-4 
-      justify-center lg:justify-start text-center">
+      <div className="min-h-screen flex flex-col items-center px-4 justify-center text-center">
         {/* Profile picture with status */}
         <div className="relative mb-12">
           <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden">
@@ -87,80 +86,6 @@ export default function Home() {
             <Link href="/contact">
               <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/75 border border-black/75 text-white hover:bg-white hover:text-black/75 transition-colors">
                 Contact
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </FadeIn>
-
-        {/* <FadeIn delay={200}>
-          <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              {[
-                '/logos/github.svg',
-                '/logos/next.svg',
-                '/logos/tensorflow.svg',
-                '/logos/docker-logo-blue.svg',
-              ].map((src, i) => (
-                <div key={i}>
-                  <Image
-                    src={src}
-                    height={50}
-                    width={150}
-                    alt={`Logo ${i + 1}`}
-                    className="h-12 w-36 object-contain hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        </FadeIn> */}
-
-        {/* Services Section */}
-        <FadeIn delay={100}>
-          <section className="pt-8 md:pt-24 pb-0 md:pb-4 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8 text-left">
-              <FadeIn delay={0} direction="up">
-                <Image
-                  src="/images/test.jpg"
-                  alt="Test Image"
-                  width={1780}
-                  height={1080}
-                  className="hidden md:block w-full h-auto mt-8 rounded-lg shadow-lg"
-                />
-              </FadeIn>
-              <FadeIn delay={50} direction="up">
-                <Image
-                  src="/images/test.jpg"
-                  alt="Test Image"
-                  width={1780}
-                  height={1080}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </FadeIn>
-              <FadeIn delay={100} direction="up">
-                <Image
-                  src="/images/test.jpg"
-                  alt="Test Image"
-                  width={1780}
-                  height={1080}
-                  className="hidden md:block w-full h-auto mt-8 rounded-lg shadow-lg"
-                />
-              </FadeIn>
-            </div>
-          </section>
-        </FadeIn>
-
-        {/* CTA Button */}
-        <FadeIn delay={100} direction="up">
-          <div className="pb-28 md:pb-20 flex flex-col items-center space-y-2">
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight">My Projects</h1>
-            <p className="text-md text-black/55 mb-4 max-w-xs md:max-w-[700px] mx-auto font-normal">
-              These are projects I’ve built from the ground up, using different tools, languages, and frameworks to create practical solutions.
-            </p>
-            <Link href="/projects">
-              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto gap-2 flex items-center text-black/75 border-black/75 hover:bg-black/75 hover:text-white transition-colors">
-                View Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>

@@ -23,7 +23,7 @@ export default function SkillProficiency({ skills }: SkillProficiencyProps) {
             </div>
             <div className="h-2 w-full bg-gray-200 rounded-full">
               <div
-                className="h-2 bg-black rounded-full transition-all duration-500"
+                className="h-2 bg-black/75 rounded-full transition-all duration-500"
                 style={{ width: `${skill.percent}%` }}
               ></div>
             </div>
