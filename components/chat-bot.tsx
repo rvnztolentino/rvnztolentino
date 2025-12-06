@@ -36,7 +36,7 @@ const formatTextWithLinks = (text: string) => {
           href={part}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 underline hover:text-blue-800"
+          className="text-blue-600 hover:underline hover:text-blue-800"
         >
           {part}
         </a>

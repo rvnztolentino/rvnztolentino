@@ -27,6 +27,8 @@ export async function POST(req: Request) {
         Renz's resume is currently not available for download on this site, it will be available on the about page (I will update this soon).
         To contact Renz, you can tell the user to send a message on the contact page which is on the Navigation bar as well.
         Or they could contact me on rvnztolentino@outlook.com
+        To access Renz's linkedIn, you can tell the user to go to https://www.linkedin.com/in/rvnztolentino/
+        To access Renz's github, you can tell the user to go to https://github.com/rvnztolentino
         To access Renz's socials, you can tell the user to go to https://linktr.ee/rvnztolentino
         Shorten your messages as well.
 
