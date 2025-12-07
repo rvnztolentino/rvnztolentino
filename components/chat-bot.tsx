@@ -53,19 +53,29 @@ export default function ChatBot() {
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isMobileView, setIsMobileView] = useState(false)
+  const [cooldownSeconds, setCooldownSeconds] = useState<number | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Auto scroll to bottom when messages change or when chat is opened
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
-
   useEffect(() => {
     scrollToBottom()
   }, [messages, isMinimized])
 
+  // cooldown countdown
+  useEffect(() => {
+    if (cooldownSeconds === null || cooldownSeconds <= 0) return
+    const t = setInterval(() => {
+      setCooldownSeconds((s) => (s && s > 0 ? s - 1 : null))
+    }, 1000)
+    return () => clearInterval(t)
+  }, [cooldownSeconds])
+
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return
+    if (cooldownSeconds && cooldownSeconds > 0) return // block during cooldown
 
     // Add user message
     const userMessage: Message = {
@@ -91,8 +101,34 @@ export default function ChatBot() {
         }),
       })
 
+      // If server returned non-2xx (including 429), handle specially
       if (!response.ok) {
-        throw new Error(`Failed to get response: ${response.status}`)
+        // Try parsing the error body
+        let errBody: any = { error: response.statusText }
+        try {
+          errBody = await response.json()
+        } catch {
+          /* ignore parse errors */
+        }
+
+        if (response.status === 429) {
+          const retry = errBody?.retryAfterSeconds ?? parseInt(response.headers.get("Retry-After") || "60", 10)
+          const rateMessage = errBody?.error ?? "You're sending messages too quickly. Please wait a moment."
+          // Show a bot-style rate-limit message
+          const botMessage: Message = {
+            id: (Date.now() + 1).toString(),
+            content: rateMessage,
+            sender: "bot",
+            timestamp: new Date(),
+          }
+          setMessages((prev) => [...prev, botMessage])
+          setCooldownSeconds(retry)
+          setIsLoading(false)
+          return
+        }
+
+        // For other non-ok statuses, throw to be handled by catch
+        throw new Error(errBody?.error || `Request failed with status ${response.status}`)
       }
 
       const data = await response.json()
@@ -109,7 +145,7 @@ export default function ChatBot() {
     } catch (error) {
       console.error("Error sending message:", error)
 
-      // Add error message
+      // Add generic error message for non-rate-limit failures
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: "I'm having trouble connecting right now. Please try again later.",
@@ -243,13 +279,13 @@ export default function ChatBot() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type a message..."
-            disabled={isLoading}
+            disabled={isLoading || (!!cooldownSeconds && cooldownSeconds > 0)}
+            placeholder={cooldownSeconds && cooldownSeconds > 0 ? `Wait ${cooldownSeconds}s to send` : "Type a message..."}
             className="flex-1 bg-white text-black/95 focus-visible:ring-gray-50/30 text-base"
           />
           <Button
             onClick={handleSendMessage}
-            disabled={isLoading || !input.trim()}
+              disabled={isLoading || !input.trim() || (!!cooldownSeconds && cooldownSeconds > 0)}
             className="ml-2 bg-white hover:bg-black/95 text-black/95 hover:text-white border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
             size="icon"
           >
