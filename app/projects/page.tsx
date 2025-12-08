@@ -17,15 +17,17 @@ export default function Projects() {
       description: "An automated road defect indexing system using machine learning for detection, classification, and prediction.",
       github: "https://github.com/rvnztolentino/road-defect-indexing",
       preview: "https://github.com/rvnztolentino/road-defect-indexing/releases",
-      category: "Machine Learning",
+      category: "AI/ML",
+      slug: "road-defect-indexing-system",
     },
     {
       id: 2,
-      title: "Portfolio Website",
+      title: "Personal Website",
       description: "A portfolio and personal website designed to highlight my skills, experiences, and achievements.",
       github: "https://github.com/rvnztolentino/rvnztolentino",
       preview: "https://rvnztolentino.vercel.app/",
-      category: "Web Development",
+      category: "Web Apps",
+      slug: "personal-website",
     },
     {
       id: 3,
@@ -33,7 +35,8 @@ export default function Projects() {
       description: "A website for Camlin Arts & Crafts, featuring range of products like magnetic bookmarks, stickers, keychains, and various designs.",
       github: "https://github.com/rvnztolentino/camlin",
       preview: "https://camlin.vercel.app/",
-      category: "Web Development",
+      category: "Web Apps",
+      slug: "camlin-arts-and-crafts",
     },
     {
       id: 4,
@@ -41,7 +44,8 @@ export default function Projects() {
       description: "An open-source project featuring a console-based autoclicker designed for efficiency and customization.",
       github: "https://github.com/rvnztolentino/nitroclicker",
       preview: "https://github.com/rvnztolentino/nitroclicker/releases",
-      category: "Desktop Application",
+      category: "Desktop Apps",
+      slug: "nitroclicker",
     },
     {
       id: 5,
@@ -49,16 +53,20 @@ export default function Projects() {
       description: "A 2-player classic Pong game project utilizing OpenGL for 2D rendering.",
       github: "https://github.com/rvnztolentino/JLPong",
       preview: "https://github.com/rvnztolentino/JLPong/releases",
-      category: "Game Development",
+      category: "Games",
+      slug: "jl-pong",
     },
   ]
 
   const categories = ["All Projects", ...Array.from(new Set(projects.map(p => p.category)))]
+
   const [selectedCategory, setSelectedCategory] = useState("All Projects")
   const [activeProject, setActiveProject] = useState<number | null>(null)
+
+  // Toggle project overlay on mobile
   const handleToggle = (id: number) => {
     if (activeProject === id) {
-      setActiveProject(null) // close if same card tapped again
+      setActiveProject(null)
     } else {
       setActiveProject(id)
     }
@@ -71,22 +79,19 @@ export default function Projects() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-28 pb-16 px-8 md:px-16 max-w-6xl mx-auto">
-        <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+      <div className="min-h-screen pt-24 pb-16 px-8 md:px-16 max-w-6xl mx-auto">
+        <Link
+          href="/"
+          className="text-black/50 inline-flex items-center gap-2 hover:bg-black/10 rounded-md px-2 py-1 mb-6 transition-colors"
+        >
           <ArrowLeft size={16} /> Back to home
         </Link>
-        <h1 className="text-4xl font-bold mb-4">Projects</h1>
+        <h1 className="text-4xl font-bold mb-6">Projects</h1>
 
+        {/* Category selector */}
         <FadeIn delay={50} direction="up">
-          <p className="text-black/60 mb-8">
-            Highlighting my personal and collaborative projects, and experiments.
-          </p>
-        </FadeIn>
-
-        {/* Category Selector */}
-        <FadeIn delay={75} direction="up">
           <div className="mb-8">
-            {/* Mobile: shadcn/ui Combobox (shown on small screens only) */}
+            {/* Mobile category view */}
             <div className="block md:hidden">
               <CategoryCombobox
                 options={categories.map(c => ({ label: c, value: c }))}
@@ -97,7 +102,7 @@ export default function Projects() {
               />
             </div>
 
-            {/* Desktop: category buttons (hidden on small screens) */}
+            {/* Desktop category view */}
             <div className="hidden md:flex flex-wrap gap-3">
               {categories.map(category => (
                 <button
@@ -105,7 +110,7 @@ export default function Projects() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-1 rounded-full border transition-colors text-sm
                     ${selectedCategory === category
-                      ? "bg-black/75 text-white border-black"
+                      ? "bg-black/90 text-white border-black"
                       : "bg-white text-black/75 border-gray-300 hover:bg-black/10"}
                   `}
                 >
@@ -127,13 +132,12 @@ export default function Projects() {
                   onClick={() => handleToggle(project.id)}
                 >
                   <div className="flex items-center justify-center h-full">
-                    {/* <span className="text-gray-400">Project Image</span> */}
                     <Image
-                      src={`/projects/project_${project.id}.jpg`}
+                      src={`/images/projects/${project.slug}.jpg`}
                       alt={project.title}
                       width={500}
                       height={500}
-                      className="object-cover w-full h-full transition-transform duration-300 transform"
+                      className="object-cover w-full h-full grayscale transition-transform duration-300 transform"
                     />
                   </div>
 

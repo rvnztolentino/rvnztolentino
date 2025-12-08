@@ -285,7 +285,7 @@ export default function ChatBot() {
           />
           <Button
             onClick={handleSendMessage}
-              disabled={isLoading || !input.trim() || (!!cooldownSeconds && cooldownSeconds > 0)}
+            disabled={isLoading || !input.trim() || (!!cooldownSeconds && cooldownSeconds > 0)}
             className="ml-2 bg-white hover:bg-black/95 text-black/95 hover:text-white border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
             size="icon"
           >

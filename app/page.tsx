@@ -35,9 +35,9 @@ export default function Home() {
       <div className="min-h-screen flex flex-col items-center px-4 justify-center text-center">
         {/* Profile picture with status */}
         <div className="relative mb-12">
-          <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden">
+          <div className="w-32 h-32 rounded-full shadow-lg overflow-hidden">
             <Image
-              src="/images/renz.jpg"
+              src="/images/renz.png"
               alt="Profile"
               width={128}
               height={128}
@@ -45,11 +45,11 @@ export default function Home() {
             />
           </div>
 
-          {/* Status badge */}
+          {/* Status badge 
           <div className="absolute -right-12 top-4 bg-white px-3 py-1 rounded-full shadow-md text-xs flex items-center">
             <span>yo, i&apos;m renz</span>
             <span className="ml-1">👋</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Main content */}
@@ -70,7 +70,7 @@ export default function Home() {
             </span>
           </h1>
             <p className="text-md text-black/55 mb-8 max-w-xs md:max-w-lg mx-auto font-normal">
-              Full-Stack Developer · Cloud Engineer
+              Software Engineer · Digital Creator
             </p>
           </div>
         </FadeIn>
@@ -79,12 +79,12 @@ export default function Home() {
         <FadeIn delay={100} direction="up">
           <div className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto flex items-center text-black/75 border-black/75 hover:bg-black/75 hover:text-white transition-colors">
+              <Button variant="outline" className="rounded-full px-12 md:py-4 h-auto flex items-center text-black/75 border-black/75 hover:bg-black/90 hover:text-white transition-colors">
                 About
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/75 border border-black/75 text-white hover:bg-white hover:text-black/75 transition-colors">
+              <Button className="rounded-full px-8 md:py-4 h-auto gap-2 flex items-center bg-black/90 border border-black/75 text-white hover:bg-white hover:text-black/75 transition-colors">
                 Contact
                 <ArrowRight className="h-4 w-4" />
               </Button>

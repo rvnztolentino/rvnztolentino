@@ -29,7 +29,7 @@ export default function Navbar() {
   const calculateOpacity = () => {
     if (isMenuOpen) return 1 // Full opacity when menu is open
     const maxScroll = 100
-    return Math.min(scrollY / maxScroll, 0.9) // Max opacity of 0.9
+    return Math.min(scrollY / maxScroll, 0.9)
   }
 
   useEffect(() => {
@@ -53,24 +53,43 @@ export default function Navbar() {
         <div className="text-md tracking-widest font-semibold ml-2">
           <Link href="/" className="">
             <Image
-              src="/logos/RT.svg"
+              src="/logos/logo.svg"
               alt="RENZ"
               width={100}
               height={100}
-              className="w-auto h-5"
+              className="w-auto h-8"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6 text-sm text-black/60 tracking-wider ml-auto">
+        <div className="hidden lg:flex items-center space-x-12 text-sm text-black/60 tracking-wider ml-auto">
+          <Link href="/about" className="hover:text-black">
+            about
+          </Link>
+          <Link href="/blog" className="hover:text-black">
+            blog
+          </Link>
+          <a 
+            href="https://flowcv.com/resume/0na4h5i9is4n"
+            target="_blank" rel="noopener noreferrer" 
+            className="hover:text-black"
+          >
+            resume
+          </a>
           <Link href="/projects" className="hover:text-black">
             projects
           </Link>
-          <span className="text-black/60">{"//"}</span>
           <Link href="/contact" className="hover:text-black">
             contact
           </Link>
+          <a 
+            href="https://linktr.ee/rvnztolentino"
+            target="_blank" rel="noopener noreferrer" 
+            className="hover:text-black"
+          >
+            linktree
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,7 +98,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Navigation with animation */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -105,6 +124,21 @@ export default function Navbar() {
                 About
               </Link>
               <Link
+                href="/blog"
+                className="text-sm uppercase tracking-wider hover:text-muted-foreground"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <a
+                href="https://flowcv.com/resume/0na4h5i9is4n"
+                target="_blank" rel="noopener noreferrer"
+                className="text-sm uppercase tracking-wider hover:text-muted-foreground"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resume
+              </a>
+              <Link
                 href="/projects"
                 className="text-sm uppercase tracking-wider hover:text-muted-foreground"
                 onClick={() => setIsMenuOpen(false)}
@@ -118,6 +152,14 @@ export default function Navbar() {
               >
                 Contact
               </Link>
+              <a
+                href="https://linktr.ee/rvnztolentino"
+                target="_blank" rel="noopener noreferrer"
+                className="text-sm uppercase tracking-wider hover:text-muted-foreground"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Linktree
+              </a>
             </div>
           </motion.div>
         )}

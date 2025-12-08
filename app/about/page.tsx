@@ -34,8 +34,11 @@ export default function About() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-28 px-8 md:px-16 max-w-5xl mx-auto">
-      <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
+      <div className="min-h-screen pt-24 px-8 md:px-16 max-w-5xl mx-auto">
+      <Link
+        href="/"
+        className="text-black/50 inline-flex items-center gap-2 hover:bg-black/10 rounded-md px-2 py-1 mb-6 transition-colors"
+      >
         <ArrowLeft size={16} /> Back to home
       </Link>
       <div className="md:flex md:items-start md:space-x-12 pb-16 md:-mb-6">
@@ -48,7 +51,7 @@ export default function About() {
           </FadeIn>
           <FadeIn delay={100} direction="up">
           <p className="text-black/60 mb-6">
-            I&apos;m currently a junior computer science undergraduate and software engineer.
+            I&apos;m a software engineer and digital creator passionate about crafting seamless digital experiences.
           </p>
           </FadeIn>
           <FadeIn delay={150} direction="up">
@@ -60,11 +63,11 @@ export default function About() {
         <FadeIn delay={150} direction="up">
         <div className="aspect-square">
           <Image
-            src="/images/aboutme.jpg"
+            src="/images/about/renz.jpg"
             alt="image"
             width={432}
             height={432}
-            className="object-cover w-[350px] h-[350px] rounded-md shadow-lg"
+            className="object-cover grayscale w-[350px] h-[350px] rounded-md shadow-lg"
           />
         </div>
         </FadeIn>

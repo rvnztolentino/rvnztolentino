@@ -6,9 +6,12 @@ import FadeIn from "@/components/fade-in"
 export default function Contact() {
   return (
     <PageTransition>
-      <div className="min-h-screen pt-24 pb-16 md:pt-36 px-8 md:px-24 max-w-5xl mx-auto">
-        <Link href="/" className="text-black/50 flex items-center gap-2 hover:underline mb-6">
-            <ArrowLeft size={16} /> Back to home
+      <div className="min-h-screen pt-24 pb-16 md:pt-32 px-8 md:px-24 max-w-5xl mx-auto">
+        <Link
+          href="/"
+          className="text-black/50 inline-flex items-center gap-2 hover:bg-black/10 rounded-md px-2 py-1 mb-6 transition-colors"
+        >
+          <ArrowLeft size={16} /> Back to home
         </Link>
         <h1 className="text-4xl font-bold mb-4">Contact</h1>
         <FadeIn delay={50} direction="up">
@@ -46,7 +49,7 @@ export default function Contact() {
 
               <div>
                 <h3 className="text-lg font-medium mb-1">Email</h3>
-                <p className="text-black/60">rvnztolentino@outlook.com</p>
+                <p className="text-black/60">rvnztolentino@gmail.com</p>
               </div>
 
               <div>
@@ -56,7 +59,7 @@ export default function Contact() {
 
               <div>
                 <h3 className="text-lg font-medium mb-1">LinkedIn</h3>
-                <Link href="https://linkedin.com/in/rvnztolentino" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline transition-colors duration-200">
+                <Link href="https://linkedin.com/in/rvnztolentino" target="_blank" rel="noopener noreferrer" className="hover:underline text-black/60 transition-colors duration-200">
                   https://linkedin.com/in/rvnztolentino
                 </Link>
               </div>
