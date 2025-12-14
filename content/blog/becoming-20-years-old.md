@@ -1,4 +1,5 @@
 ---
+id: "1"
 title: "becoming 20 years old."
 date: "2025-12-09"
 excerpt: "turning 20. some thoughts about growing up and moving forward."

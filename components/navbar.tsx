@@ -71,7 +71,7 @@ export default function Navbar() {
             blog
           </Link>
           <a 
-            href="https://flowcv.com/resume/0na4h5i9is4n"
+            href="https://drive.google.com/file/d/1AAY68uA8QFq6LNyK_zhUQf2D4APoHFy5/view?usp=sharing"
             target="_blank" rel="noopener noreferrer" 
             className="hover:text-black"
           >
@@ -131,7 +131,7 @@ export default function Navbar() {
                 Blog
               </Link>
               <a
-                href="https://flowcv.com/resume/0na4h5i9is4n"
+                href="https://drive.google.com/file/d/1AAY68uA8QFq6LNyK_zhUQf2D4APoHFy5/view?usp=sharing"
                 target="_blank" rel="noopener noreferrer"
                 className="text-sm uppercase tracking-wider hover:text-muted-foreground"
                 onClick={() => setIsMenuOpen(false)}

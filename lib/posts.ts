@@ -44,13 +44,20 @@ export async function getAllPosts() {
           // preserve any frontmatter-provided slug for display or canonical metadata
           frontmatterSlug: data?.slug ?? null,
           date: data?.date ?? null,
+          // ensure id is numeric when present so we can sort by it
+          id: data?.id != null ? Number(data.id) : null,
         }
       })
   )
 
-  // optional: sort by date (newest first)
+  // Sorting: numeric id (highest id first). Falls back to date order if id missing.
   const toTs = (d: any) => (d ? new Date(d).getTime() : 0)
-  return posts.sort((a, b) => toTs(b.date) - toTs(a.date))
+  return posts.sort((a, b) => {
+    const aId = Number(a.id) || 0
+    const bId = Number(b.id) || 0
+    if (aId !== bId) return bId - aId
+    return toTs(b.date) - toTs(a.date) // fallback to date (newest first)
+  })
 }
 
 export async function getPostBySlug(slug: string) {

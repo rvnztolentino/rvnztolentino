@@ -2,8 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import { NextResponse } from "next/server"
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
-const RATE_LIMIT_WINDOW_MS = 120_000; // set window
-const RATE_LIMIT_MAX = 3; // set max messages per window
+const RATE_LIMIT_WINDOW_MS = 300_000; // set window
+const RATE_LIMIT_MAX = 2; // set max messages per window
 
 type RateMap = Map<string, number[]>;
 const rateMap: RateMap = new Map();

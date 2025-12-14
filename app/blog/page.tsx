@@ -17,21 +17,34 @@ export default async function Blog() {
         <h1 className="text-4xl font-bold mb-6">Blog</h1>
         <FadeIn delay={50} direction="up">
           <div className="space-y-0">
-            {posts.map((post: any, i: number) => (
-              <article key={`${post.slug}-${i}`} className="border-t border-b border-gray-200 py-6">
-                <div className="grid items-start md:grid-cols-2">
-                  <div className="pr-4">
-                    <Link href={`/blog/${post.slug}`} className="group block">
-                      <p className="font-bold text-black/90 md:mb-1 inline-flex group-hover:bg-black/10 rounded-md px-2 py-1 transition-colors">{post.title}</p>
-                    </Link>
-                    <p className="pl-2 text-sm text-gray-500">Last modified: {post.date}</p>
+            {posts.map((post: any, i: number) => {
+              const rawDate = post.date ?? null
+              const formattedDate = rawDate
+                ? new Date(rawDate).toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })
+                : null
+
+              return (
+                <article key={`${post.slug}-${i}`} className="border-t border-b border-gray-200 py-6">
+                  <div className="grid items-start md:grid-cols-2">
+                    <div className="pr-4">
+                      <Link href={`/blog/${post.slug}`} className="group block">
+                        <p className="font-bold text-black/90 md:mb-1 inline-flex group-hover:bg-black/10 rounded-md px-2 py-1 transition-colors">{post.title}</p>
+                      </Link>
+                      {formattedDate && (
+                        <p className="pl-2 text-sm text-gray-500">Last updated: {formattedDate}</p>
+                      )}
+                    </div>
+                    <div className="pl-2 md:pl-0 mt-3 md:mt-0">
+                      <p className="text-black/75 text-md">{post.excerpt}</p>
+                    </div>
                   </div>
-                  <div className="pl-2 md:pl-0 mt-3 md:mt-0">
-                    <p className="text-black/75 text-md">{post.excerpt}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              )
+            })}
           </div>
         </FadeIn>
       </div>

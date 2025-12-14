@@ -70,7 +70,7 @@ export default function Home() {
             </span>
           </h1>
             <p className="text-md text-black/55 mb-8 max-w-xs md:max-w-lg mx-auto font-normal">
-              Software Engineer · Digital Creator
+              Software Engineer
             </p>
           </div>
         </FadeIn>
