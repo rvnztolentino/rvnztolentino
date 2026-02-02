@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Contact: React.FC = () => {
+  const [isTallyLoaded, setIsTallyLoaded] = useState(false);
 
   // Tally Embed Script Loading
   useEffect(() => {
@@ -53,18 +54,24 @@ const Contact: React.FC = () => {
         {/* Right Side Content - Tally Form */}
         <div className="w-full">
           <div className="p-8 border border-white/5 h-fit">
-            <h3 className="text-white font-bold tracking-widest text-3xl mb-8 uppercase border-b border-white/10 pb-4">
+            <h3 className="md:text-left text-center text-white font-bold tracking-widest text-3xl mb-8 uppercase border-b border-white/10 pb-4">
               Contact Form
             </h3>
 
-            <div className="w-full h-[280px] overflow-hidden">
+            <div className="w-full h-[280px] overflow-hidden relative">
+              {!isTallyLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+                </div>
+              )}
               <iframe
                 data-tally-src="https://tally.so/embed/obG7Le?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1"
                 loading="lazy"
                 width="100%"
                 height="200"
                 title="Contact Form"
-                className="w-full h-full border-none"
+                className={`w-full h-full border-none transition-opacity duration-300 ${isTallyLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={() => setIsTallyLoaded(true)}
               >
               </iframe>
             </div>

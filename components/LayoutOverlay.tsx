@@ -41,14 +41,16 @@ const LayoutOverlay: React.FC<LayoutOverlayProps> = ({ scrollToSection }) => {
 
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 w-full z-40 px-8 py-6 md:px-12 flex justify-between items-center transition-all duration-300 text-white ${hasScrolled ? 'bg-[#1A1A1A]/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-          } ${isChatOpen ? 'hidden' : 'flex'}`}
+        className={`fixed top-0 left-0 w-full px-8 py-6 md:px-12 flex justify-between items-center transition-all duration-300 text-white ${isMobileMenuOpen ? 'z-50 bg-transparent' : 'z-40'
+          } ${hasScrolled && !isMobileMenuOpen ? 'bg-[#1A1A1A]/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'} ${isChatOpen ? 'hidden' : 'flex'
+          }`}
       >
         {/* Logo */}
-        <div className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <span className="text-3xl font-bold font-display tracking-tighter">R</span>
-          </div>
+        <div className="cursor-pointer" onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setIsMobileMenuOpen(false);
+        }}>
+          <span className="text-3xl font-bold font-display tracking-tighter">R</span>
         </div>
 
         {/* Desktop Nav */}
