@@ -27,6 +27,17 @@ const LayoutOverlay: React.FC<LayoutOverlayProps> = ({ scrollToSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen || isChatOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen, isChatOpen]);
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const handleNavClick = (sectionId: string) => {
@@ -41,9 +52,9 @@ const LayoutOverlay: React.FC<LayoutOverlayProps> = ({ scrollToSection }) => {
 
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 w-full px-8 py-6 md:px-12 flex justify-between items-center transition-all duration-300 text-white ${isMobileMenuOpen ? 'z-50 bg-transparent' : 'z-40'
-          } ${hasScrolled && !isMobileMenuOpen ? 'bg-[#1A1A1A]/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'} ${isChatOpen ? 'hidden' : 'flex'
-          }`}
+        className={`fixed top-0 left-0 w-full px-8 py-6 md:px-12 flex justify-between items-center transition-all duration-300 text-white z-40 
+          ${isMobileMenuOpen ? 'bg-[#1A1A1A]' : (hasScrolled ? 'bg-[#1A1A1A]/90 backdrop-blur-sm shadow-sm' : 'bg-transparent')} 
+          ${isChatOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
       >
         {/* Logo */}
         <div className="cursor-pointer" onClick={() => {
@@ -77,7 +88,14 @@ const LayoutOverlay: React.FC<LayoutOverlayProps> = ({ scrollToSection }) => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#1A1A1A] z-40 flex flex-col items-center justify-center gap-8 md:hidden">
+        <div className="fixed inset-0 bg-[#1A1A1A] z-50 flex flex-col items-center justify-center gap-8 md:hidden">
+          <button
+            className="absolute top-8 right-8 text-white"
+            onClick={toggleMobileMenu}
+          >
+            <X />
+          </button>
+
           <button
             onClick={() => handleNavClick('projects')}
             className="text-2xl font-light tracking-widest uppercase"

@@ -15,11 +15,11 @@ function App() {
   return (
     <main className="w-full bg-background text-white min-h-screen relative selection:bg-white selection:text-black">
       <LayoutOverlay scrollToSection={scrollToSection} />
-      
+
       <Hero />
-      <Portfolio />
+      <Portfolio scrollToSection={scrollToSection} />
       <Contact />
-      
+
       {/* Simple Footer Credit */}
       <footer className="w-full pb-8 pt-8 md:pt-2 text-center text-xs text-gray-700 font-light uppercase tracking-widest">
         &copy; {new Date().getFullYear()} Renz. All Rights Reserved.

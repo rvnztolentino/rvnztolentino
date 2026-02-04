@@ -58,17 +58,16 @@ const Contact: React.FC = () => {
               Contact Form
             </h3>
 
-            <div className="w-full h-[280px] overflow-hidden relative">
+            <div className="w-full overflow-hidden relative">
               {!isTallyLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
                 </div>
               )}
               <iframe
-                data-tally-src="https://tally.so/embed/obG7Le?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1"
+                data-tally-src="https://tally.so/embed/obG7Le?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
                 width="100%"
-                height="200"
                 title="Contact Form"
                 className={`w-full h-full border-none transition-opacity duration-300 ${isTallyLoaded ? 'opacity-100' : 'opacity-0'}`}
                 onLoad={() => setIsTallyLoaded(true)}

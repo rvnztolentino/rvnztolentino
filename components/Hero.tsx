@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const [isToggled, setIsToggled] = React.useState(false);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="relative z-10 select-none text-center">
@@ -10,8 +12,11 @@ const Hero: React.FC = () => {
         </span>
 
         {/* Main Name */}
-        <div className="relative inline-block cursor-default">
-          <h1 className="font-display font-bold text-[12vw] leading-none tracking-tighter text-white mix-blend-overlay opacity-90 transition-opacity duration-300">
+        <div
+          className="relative inline-block cursor-pointer"
+          onClick={() => setIsToggled(!isToggled)}
+        >
+          <h1 className={`font-display font-bold text-[12vw] leading-none tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(120deg,#ffffff_48%,#000000_48%,#000000_52%,#ffffff_52%)] bg-[length:300%_100%] transition-[background-position] duration-700 ease-in-out pb-2 ${isToggled ? 'bg-[position:0_0]' : 'bg-[position:100%_0]'}`}>
             RENZ
           </h1>
         </div>
