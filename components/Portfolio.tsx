@@ -56,7 +56,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ scrollToSection }) => {
               <div>
                 <h2 className="font-display font-bold text-5xl md:text-7xl mb-4">PROJECTS</h2>
                 <p className="text-gray-400 font-light max-w-md">
-                  A curated selection of my work in software engineering, ranging from web applications to algorithmic trading systems.
+                  A curated selection of my work in AI-powered products, full-stack applications, and automated systems.
                 </p>
               </div>
               <button

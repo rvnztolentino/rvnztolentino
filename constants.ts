@@ -22,10 +22,10 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     id: 1,
     title: "ROAD DEFECT INDEXING SYSTEM",
-    description: "Designed a road crack segmentation system and trained a YOLOv10 model achieving 68% mAP",
+    description: "Designed a road crack segmentation system and trained a YOLOv10 model achieving 68% mAP.",
     image: "https://picsum.photos/800/600?random=1",
     tech: ["Python", "YOLOv10", "PyTorch"],
-    link: "https://github.com/bntlyr/Road-Defect-Indexing-System"
+    link: "https://github.com/bntlyr/Road-Defect-Indexing-System/releases"
   },
   {
     id: 2,
@@ -67,7 +67,7 @@ export const RATE_LIMIT_MAX = 3;
 
 export const AI_SYSTEM_PROMPT =
   `You are Kei, an AI assistant for Renz Tolentino's personal website. 
-  Your role is to help visitors navigate the site and answer questions about Renz's work and background.
+  Your role is to help visitors navigate the site and answer questions about Renz's background and work.
 
   ## Response Guidelines
 
@@ -97,6 +97,7 @@ export const AI_SYSTEM_PROMPT =
 
   ### Basic Information
   - Name: Renz Tolentino (Full name: John Renz Tolentino)
+  - Online Name / Handle: Keiji
   - Pronouns: he/him (Straight)
   - Nationality: Filipino
   - Location: Philippines
