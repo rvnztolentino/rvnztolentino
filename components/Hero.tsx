@@ -13,12 +13,26 @@ const Hero: React.FC = () => {
 
         {/* Main Name */}
         <div
-          className="relative inline-block cursor-pointer"
+          className="relative inline-block cursor-default overflow-hidden align-bottom"
           onClick={() => setIsToggled(!isToggled)}
         >
-          <h1 className={`font-display font-bold text-[12vw] leading-none tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(120deg,#ffffff_48%,#000000_48%,#000000_52%,#ffffff_52%)] bg-[length:300%_100%] transition-[background-position] duration-700 ease-in-out pb-2 ${isToggled ? 'bg-[position:0_0]' : 'bg-[position:100%_0]'}`}>
+          {/* Ghost element for layout sizing */}
+          <h1 className="font-display font-bold text-[12vw] leading-none tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(120deg,#ffffff_48%,#000000_48%,#000000_52%,#ffffff_52%)] bg-[length:300%_100%] bg-[position:100%_0] pb-2 opacity-0 pointer-events-none" aria-hidden="true">
             RENZ
           </h1>
+
+          {/* Sliding Track */}
+          <div
+            className="absolute top-0 left-0 w-full flex flex-col transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform"
+            style={{ transform: isToggled ? 'translateY(-50%)' : 'translateY(0%)' }}
+          >
+            <h1 className="font-display font-bold text-[12vw] leading-none tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(120deg,#ffffff_48%,#000000_48%,#000000_52%,#ffffff_52%)] bg-[length:300%_100%] bg-[position:100%_0] pb-2">
+              RENZ
+            </h1>
+            <h1 className="font-display font-bold text-[12vw] leading-none tracking-tighter text-transparent bg-clip-text bg-[linear-gradient(120deg,#ffffff_48%,#000000_48%,#000000_52%,#ffffff_52%)] bg-[length:300%_100%] bg-[position:100%_0] pb-2">
+              圭司
+            </h1>
+          </div>
         </div>
 
         {/* Bottom Right Label */}
