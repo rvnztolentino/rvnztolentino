@@ -182,7 +182,7 @@ const AIChat: React.FC<AIChatProps> = ({ onClose }) => {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       a: ({ node, ...props }) => (
-                        <a {...props} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-all" />
+                        <a {...props} target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition-all break-all md:break-normal" />
                       )
                     }}
                   >
