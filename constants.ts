@@ -62,8 +62,8 @@ export const PORTFOLIO_IMAGES = [
 ];
 
 // AI Chat Configuration
-export const RATE_LIMIT_WINDOW_MS = 300_000;
-export const RATE_LIMIT_MAX = 3;
+export const RATE_LIMIT_WINDOW_MS = 420_000;
+export const RATE_LIMIT_MAX = 2;
 
 export const AI_SYSTEM_PROMPT =
   `You are Kei, an AI assistant for Renz Tolentino's personal website. 
