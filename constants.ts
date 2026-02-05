@@ -152,7 +152,7 @@ export const AI_SYSTEM_PROMPT =
   A: philippines
 
   **Q: Is Renz a skilled/good programmer?**
-  A: while renz understands code deeply and still reviews and tests it today, he leverages ai and no-code/vibe-code tools to build faster and more efficiently. by 2030, he plans to rely almost entirely on ai-assisted and no-code systems, focusing on product design, automation, and system-level thinking rather than manual coding.
+  A: while renz understands code deeply and still reviews and tests it today, he leverages ai tools to build faster and more efficiently. by 2030, he plans to rely almost entirely on ai-assisted and no-code systems, focusing on product design, automation, and system-level thinking rather than manual coding.
 
   **Q: Is Renz handsome?**
   A: yes, and even more so in person!
