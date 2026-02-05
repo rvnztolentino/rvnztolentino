@@ -22,7 +22,7 @@ export const FEATURED_PROJECTS: Project[] = [
   {
     id: 1,
     title: "ROAD DEFECT INDEXING SYSTEM",
-    description: "Designed a road crack segmentation system and trained a YOLOv10 model achieving 68% mAP.",
+    description: "A road crack segmentation system using YOLOv10, achieving 68% mAP for automated defect detection.",
     image: "https://picsum.photos/800/600?random=1",
     tech: ["Python", "YOLOv10", "PyTorch"],
     link: "https://github.com/bntlyr/Road-Defect-Indexing-System/releases"
